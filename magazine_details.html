@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Magazine Details</title>
+     <link
+      rel="stylesheet"
+      href="hotel-datepicker-main/dist/css/hotel-datepicker.css"
+    />
+    <link rel="stylesheet" href="css/hotels.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/magazine_details.css" />
+
+   
+  </head>
+  <body>
+    <header>
+      <div class="top-header">
+        <button class="btn">
+          Beratungstermin buchen
+          <img src="assets/images/right-chevron.png" alt="" class="btn-icon" />
+        </button>
+      </div>
+
+      <div class="bottom-header-container">
+        <div class="bottom-header">
+          <div class="logo-container">
+            <img
+              src="./assets/images/logo_meine_malediven.svg"
+              alt="Logo"
+              class="logo"
+            />
+          </div>
+
+          <div class="nav-items-container">
+            <nav class="nav-items">
+              <button class="hamburger" id="hamburger">☰</button>
+
+              <div class="mobile-menu" id="mobile-menu">
+                <ul class="nav-list">
+                  <li><a href="/">Startseite</a></li>
+                  <li><a href="/hotel_page.html">Hotels</a></li>
+                  <li><a href="/angebote">Angebote</a></li>
+                  <li><a href="/magazine_details.html">Nautilus Magazin</a></li>
+                  <!-- <li><a href="/nautilus-magazin">Nautilus Magazin</a></li> -->
+                </ul>
+
+                <div class="search-btn-container">
+                  <button class="search-iconli">
+                    <img
+                      class="search-icon"
+                      src="assets/images/glas_blue_001f41.png"
+                      alt="Suche"
+                    />
+                  </button>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="booking-layer-container">
+        <div class="booking-layer">
+          <div class="dropdown-container">
+            <div class="custom-dropdown" id="hotelDropdown">
+              <div class="selected">
+                <div class="hotel-autocomplete-wrapper">
+                  <input
+                    type="text"
+                    class="hotel-autocomplete-input"
+                    placeholder="Sagen Sie uns welches Hotel Sie suchen..."
+                  />
+                  <ul class="hotel-autocomplete-list"></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="datepicker-container">
+            <button id="hotel-datepicker" class="datepicker-btn" type="button">
+              <div class="datepicker-text">
+                <div class="labels">
+                  <span>Anreisedatum</span>
+                  <span>Abreisedatum</span>
+                </div>
+                <div class="values">
+                  <span id="checkin-date" class="placeholder">--</span>
+                  <span>-</span>
+                  <span id="checkout-date" class="placeholder">--</span>
+                </div>
+              </div>
+              <img
+                src="assets/images/calendar-icon.png"
+                alt="Calendar"
+                class="calendar-icon"
+              />
+            </button>
+          </div>
+
+          <div class="nights-container">
+            <label for="points" class="nights-label">Nächte</label>
+            <input
+              type="number"
+              id="points"
+              name="points"
+              step="1"
+              min="1"
+              value="1"
+              class="nights-input"
+            />
+          </div>
+
+          <div class="dropdown-container2">
+            <div class="custom-dropdown2" id="travellersDropdown">
+              <span class="selected-text">
+                <span class="main-text">Reisende</span>
+              </span>
+              <span class="arrow">▼</span>
+            </div>
+
+            <div class="modal-overlay" id="modal">
+              <div class="modal">
+                <div class="row">
+                  <span class="label">Erwachsene</span>
+                  <div class="counter">
+                    <button onclick="changeCount('adults', -1)">-</button>
+                    <span id="adultsCount">2</span>
+                    <button onclick="changeCount('adults', 1)">+</button>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <span class="label">Kinder</span>
+                  <div class="counter">
+                    <button onclick="changeCount('children', -1)">-</button>
+                    <span id="childrenCount">0</span>
+                    <button onclick="changeCount('children', 1)">+</button>
+                  </div>
+                </div>
+
+                <div id="childrenAges" class="children-ages"></div>
+
+                <div class="row add-room">
+                  <span class="label link-label">Zimmer hinzufügen</span>
+                  <div class="counter">
+                    <button onclick="changeCount('rooms', -1)">-</button>
+                    <span id="roomsCount">1</span>
+                    <button onclick="changeCount('rooms', 1)">+</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="dropdown-container">
+            <div class="custom-dropdown nation" id="nationalityDropdown">
+              <div class="selected">
+                Land
+                <span class="arrow">▼</span>
+              </div>
+              <ul class="dropdown-list">
+                <li data-value="germany">
+                  <span class="country-name">Deutschland</span>
+                </li>
+                <li data-value="austria">
+                  <span class="country-name">Österreich</span>
+                </li>
+                <li data-value="switzerland">
+                  <span class="country-name">Schweiz</span>
+                </li>
+                <li data-value="switzerland">
+                  <span class="country-name">andere</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="booking-btn-container">
+            <button class="booking-btn" type="button">Jetzt buchen</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <img src="./assets/images/MagazineHero.png" alt="Magazine Cover" />
+      </section>
+
+      <section class="intro_section">
+        <div class="intro_heading">
+          <h3 class="intro_hashtag">#Drohnen</h3>
+          <h1 class="intro_title">
+            Drohnen auf den Malediven: Was Sie wissen sollten
+          </h1>
+          <p class="intro_description">
+            Planen Sie, Ihre Drohne mit in den Malediven-Urlaub zu nehmen? Hier
+            erfahren Sie, welche Regeln und Besonderheiten es bei der Einfuhr
+            und Nutzung von Drohnen zu beachten gibt. Wir geben Ihnen wertvolle
+            Hinweise, damit Sie vor Ort keine bösen Überraschungen erleben und
+            Ihre Reise unbeschwert genießen können.
+          </p>
+        </div>
+      </section>
+
+      <section class="heading_section">
+        <div class="heading_container">
+          <div class="heading_images">
+            <img
+              src="assets/images/image_magazin_beatiful_woman.webp"
+              alt="Drohne Malediven 1"
+            />
+            <img
+              src="assets/images/image_magazin_drohne.webp"
+              alt="Drohne Malediven 2"
+            />
+          </div>
+
+          <div class="heading_texts">
+            <div class="text_block">
+              <h2 class="text_block_title">
+                Drohnen auf den Malediven: Was Sie wissen sollten
+              </h2>
+              <p class="text_block_description">
+                Die Nutzung von Drohnen ist auf den Malediven generell erlaubt,
+                aber es gibt einige Gesetze, die beim Fliegen im Land beachtet
+                werden müssen. Es gibt auf den Malediven keine Vorschrift, nach
+                welcher Sie einen Führerschein benötigen. Dennoch müssen Sie als
+                Betreiber sicherstellen, dass sie folgenden Bestimmungen
+                einhalten, wenn sie auf den Malediven mit einer Drohne fliegen.
+              </p>
+            </div>
+
+            <div class="text_block">
+              <h3 class="text_block_title">
+                Was gilt zu beachten bei dem Einsatz einer Drohne auf den
+                Malediven?
+              </h3>
+              <ul class="text_block_list">
+                <li>Ihre Drohne nicht über Menschen oder Menschenmengen</li>
+                <li>Fliegen Sie Ihre Drohne nicht höher als 120 Meter</li>
+                <li>Fliegen Sie Ihre Drohne nicht außerhalb der Sichtlinie</li>
+                <li>
+                  Respektieren Sie die Privatsphäre anderer, wenn Sie Ihre
+                  Drohne fliegen
+                </li>
+                <li>
+                  Fliegen Sie nur bei Tageslicht und nur bei guten
+                  Wetterbedingungen
+                </li>
+                <li>
+                  Fliegen Sie Ihre Drohne nicht in sensiblen Bereichen,
+                  einschließlich Regierungs- oder Militäreinrichtungen. Die
+                  Verwendung von Drohnen oder Kameradrohnen in diesen Bereichen
+                  ist verboten.
+                </li>
+              </ul>
+            </div>
+
+            <div class="text_block">
+              <h3 class="text_block_title">Mit der Drohne auf Reisen</h3>
+              <p class="text_block_description">
+                Das Genehmigungsverfahren ist langwierig. Der Antrag sollte
+                mindestens 3–4 Wochen, besser 2 Monate vor der Reise gestellt
+                werden. Die Flugzonen sind stark eingeschränkt, da viele Inseln
+                Seehäfen oder Wasserflugzeug-Landeplattformen haben.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="intro_section">
+        <div class="intro_heading">
+          <!-- <h3 class="intro_hashtag">#Drohnen</h3> -->
+          <h1 class="intro_title">Wichtig:</h1>
+          <p class="intro_description">
+            Halten Sie sich stets an die geltenden Drohnengesetze der Malediven.
+            Für Genehmigungen wenden Sie sich an die lokale Luftfahrtbehörde.
+          </p>
+          <br />
+          <br />
+          <p class="intro_description">
+            Wenn Sie Ihre Drohne plus Zubehör mit auf Reisen nehmen, gibt es
+            einige Dinge zu beachten. Besonders heikel ist das Thema Akkus in
+            Flugzeugen. Je nach Leistungsstärke der Akkus dürfen bis zu zehn
+            Lithium Batterien oder Akkumulatoren als Ersatzteile für
+            elektronische Gebrauchsgüter im Handgepäck befördert werden. Diese
+            müssen gegen Kurzschluss gesichert bzw. die Pole isoliert sein.
+          </p>
+
+          <h3 class="intro_title rules">
+            Wenn Sie mit Condor fliegen, gelten folgende Regeln:
+          </h3>
+
+          <div class="battery_section">
+            <h2 class="battery_title">
+              Bei Akkus mit einer Leistungsstärke von bis zu 100 Wh:
+            </h2>
+            <ul class="battery_list">
+              <li>
+                Sie dürfen bis zu zehn Lithium Batterien oder Akkumulatoren ohne
+                Anmeldung mitnehmen.
+              </li>
+              <li>
+                Bei Akkus mit einer Leistungsstärke zwischen 100 und 160 Wh:
+              </li>
+              <li>
+                Die Mitnahme muss von Condor genehmigt werden. Pro Gast können
+                maximal 2 Akkus genehmigt werden
+              </li>
+              <li>
+                Kontaktieren Sie hierfür vor Abflug
+                <a href="mailto:specialassistance@condor.com"
+                  >specialassistance@condor.com</a
+                >.
+              </li>
+            </ul>
+            <br />
+            <h2 class="battery_title">
+              Bei Akkus zwischen mit einer Leistungsstärke ab 160 Wh oder höher:
+            </h2>
+            <ul class="battery_list">
+              <li>
+                Diese Akkus dürfen Sie aus Sicherheitsgründen nicht mitnehmen.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="intro_section">
+        <div class="intro_heading">
+          <h1 class="intro_title">Haftung:</h1>
+          <p class="intro_description">
+            Wir übernehmen keine Haftung und können keine Genehmigungen
+            garantieren. Die lokalen Behörden sind die einzigen Ansprechpartner
+            für Genehmigungen. Wer sich nicht an die Vorgaben hält, riskiert ein
+            Flugverbot für seine Drohne.
+          </p>
+        </div>
+
+        <div class="pagination_container">
+          <nav class="custom-pagination" aria-label="Pagination">
+            <ul>
+              <li>
+                <a
+                  href="#"
+                  class="custom-pagination__button"
+                  aria-label="Zurück"
+                  >Zur&uuml;ck</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="custom-pagination__item custom-pagination__item--active"
+                  >1</a
+                >
+              </li>
+              <li>
+                <a href="#" class="custom-pagination__item">2</a>
+              </li>
+              <li>
+                <a href="#" class="custom-pagination__item">3</a>
+              </li>
+              <li>
+                <span class="custom-pagination__ellipsis">...</span>
+              </li>
+              <li>
+                <a href="#" class="custom-pagination__item">7</a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="custom-pagination__button"
+                  aria-label="Nächste"
+                >
+                  N&auml;chste</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+
+      <section class="hotels">
+        <!-- <div class="hotels_heading">
+          <h3 class="hotels_hashtag">#Interessen</h3>
+          <h1 class="hotels_title">
+            Ausgesuchte Hotels für spezielle Interessen
+          </h1>
+          <p class="hotels_description">
+            Unsere handverlesenen Hotels auf den Malediven bieten für jeden das
+            perfekte Erlebnis. Entdecken Sie die besten Hotels für Ihre
+            individuellen Bedürfnisse und genießen Sie einen unvergesslichen
+            Urlaub.
+          </p>
+        </div> -->
+
+        <div class="hotels-cards-container magazine_cards">
+      
+          <div class="hotel-card">
+            <div class="image-container">
+              <img
+                src="./assets/images/image_wedding_filter_37159123_l.webp"
+                alt="Hotel One"
+              />
+            </div>
+            <div class="card-content">
+              <h3 class="hotel-title">Haftungsausschluss</h3>
+              <p class="hotel-location">
+                Aufgrund der sich ständig ändernden nationalen Drohnengesetze
+                können wir weder eine Haftung übernehmen noch für eine
+                Genehmigung garantieren. Bitte sehen Sie von Anfragen
+                diesbezüglich ab, da Ihnen nur die örtlichen Behörden in
+                Genehmigungsfragen helfen können. Wenn Sie sich nicht an die
+                Vorgaben halten, laufen Sie Gefahr, dass Sie Ihre Drohne nicht
+                fliegen lassen können.
+              </p>
+              <button class="book-btn magazine_btn">
+                <span class="btn-arrow">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-4.147-4.146a.5.5 0 0 1 .708-.708l5 5a.498.498 0 0 1 .146.35v.008a.498.498 0 0 1-.146.35l-5 5a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    />
+                  </svg>
+                </span>
+                Mehr Informationen
+              </button>
+            </div>
+          </div>
+
+         
+          <div class="hotel-card">
+            <div class="image-container">
+              <img
+                src="./assets/images/image_family_filter_iStock-1143565589.webp"
+                alt="Hotel Two"
+              />
+            </div>
+            <div class="card-content">
+              <h3 class="hotel-title">Genereller Hinweis</h3>
+              <p class="hotel-location">
+                Die Gebiete, in denen Drohnen geflogen werden können, sind auf
+                den Malediven sehr begrenzt, da ein großer Teil des Landes aus
+                Inseln mit Seehäfen besteht, was den Einsatz von Drohnen
+                einschränkt. Denken Sie auch daran, das es für die
+                Wasserflugzeuge etliche Landeplattformen gibt.
+              </p>
+              <button class="book-btn magazine_btn">
+                <span class="btn-arrow">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-4.147-4.146a.5.5 0 0 1 .708-.708l5 5a.498.498 0 0 1 .146.35v.008a.498.498 0 0 1-.146.35l-5 5a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    />
+                  </svg>
+                </span>
+                Mehr Informationen
+              </button>
+            </div>
+          </div>
+
+    
+          <div class="hotel-card">
+            <div class="image-container">
+              <img
+                src="./assets/images/image_diving_filters.webp"
+                alt="Hotel Three"
+              />
+            </div>
+            <div class="card-content">
+              <h3 class="hotel-title">Der neue Terminal für Wasserflugzeuge</h3>
+              <p class="hotel-location">
+                Das neue Wasserflugzeug-Terminal (Kosten: 55 Mio. USD) bietet
+                modernste Technik auf 7,8 Hektar. Es gibt Platz für 55
+                Flugzeuge, erweiterbar auf 100, und eine Kapazität von bis zu 7
+                Millionen Passagieren pro Jahr. Das Terminal umfasst 28
+                Ankunfts- und 50 Abflugschalter, 10 Gates mit
+                Sicherheitskontrollen, 19 Resort-Lounges, 1.800 m² VIP-Lounges
+                sowie einen speziellen Bereich für Touristen.
+              </p>
+              <button class="book-btn magazine_btn">
+                <span class="btn-arrow">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-4.147-4.146a.5.5 0 0 1 .708-.708l5 5a.498.498 0 0 1 .146.35v.008a.498.498 0 0 1-.146.35l-5 5a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    />
+                  </svg>
+                </span>
+                Mehr Informationen
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+   
+    <div class="footer_box">
+      <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-left">
+            <img
+              src="assets/images/mm-logo-white.png"
+              alt="Logo"
+              class="footer-logo"
+            />
+            <p class="footer-text">
+              Meine Malediven ist eine Marke der BlueFields GmbH © 2004 - 2026
+            </p>
+            <div class="footer-images">
+              <img src="assets/images/visa.svg" alt="Zahlung mit Visa" />
+              <img
+                src="assets/images/mastercard-cc.svg"
+                alt="Zahlung mit Mastercard"
+              />
+              <img
+                src="assets/images/rechnung_logo.svg"
+                alt="Zahlung auf Rechnung"
+              />
+            </div>
+          </div>
+
+          <div class="footer-right">
+            <div class="footer-links-top">
+              <div class="footer-col">
+                <a href="/hotel-uebersicht">Hotels der Malediven</a>
+                <a href="/reisefuehrer">Reiseführer Malediven</a>
+                <a href="/atolle">Die Atolle der Malediven</a>
+                <a href="/nautilus-magazin">Nautilus Magazin</a>
+              </div>
+              <div class="footer-col">
+                <a href="/faq.html">FAQ / Hilfe</a>
+                <a href="/news">Malediven-News</a>
+              </div>
+              <div class="footer-col">
+                <a href="/repeater">Wiederkehrende Gäste</a>
+                <a href="/honeymooner">Honeymooner</a>
+                <a href="/geburtstag">Dein Geburtstag</a>
+                <a href="/gruppenreisen">Reisen in der Gruppe</a>
+              </div>
+            </div>
+
+            <div class="footer-links-bottom">
+              <a href="/kontakt.html">Kontakt</a>
+              <a href="/impressum.html">Impressum</a>
+              <a href="/datenschutz">Datenschutz</a>
+              <a href="/agb.html">AGB</a>
+              <a href="/entgelttabelle">Entgelttabelle</a>
+              <a href="ueber_uns.html">Über uns</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="module" src="fecha-4.2.1/lib/fecha.js"></script>
+    <script src="fecha-4.2.1/dist/fecha.min.js"></script>
+    <script src="hotel-datepicker-main/dist/js/hotel-datepicker.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

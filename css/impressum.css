@@ -1,0 +1,190 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans) !important;
+}
+
+.breadcrumbs {
+  padding: 1rem 1rem;
+}
+
+.breadcrumbs_hotel_name {
+  color: orange;
+}
+
+.breadcrumbs_text {
+  font-size: 1.5rem;
+  color: #0f386c;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.breadcrumb_link {
+  color: #0f386c;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.breadcrumb_link:hover {
+  color: orange;
+  cursor: pointer;
+}
+
+.breadcrumb_separator {
+  color: #999;
+}
+
+.breadcrumb_current {
+  color: orange;
+  font-weight: 600;
+}
+
+.impressum_intro_container {
+  padding: 2.5rem 1rem;
+}
+
+.impressum_title {
+  color: #0f386e;
+  font-weight: 300 !important;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.impressum_description {
+  color: #333333;
+  font-weight: 300;
+  margin-bottom: 0rem;
+  font-size: 1rem;
+  width: 90%;
+}
+
+.impressumformular_link {
+  text-decoration: none;
+  color: #0f386e;
+}
+
+/* ------------------ RESPONSIVENESS ------------------ */
+
+/* Extra Small Devices (<=480px) */
+@media (max-width: 480px) {
+}
+
+/* Small Devices (481px - 640px) */
+@media (min-width: 481px) and (max-width: 640px) {
+}
+
+/* Medium Devices (641px - 768px) */
+@media (min-width: 641px) and (max-width: 768px) {
+  .breadcrumbs {
+    padding: 1rem 2rem;
+  }
+
+  .impressum_intro_container {
+    padding: 2.5rem 2rem;
+  }
+  .impressum_title {
+    font-size: 2.5rem;
+  }
+  .impressum_description {
+    font-size: 1.5rem;
+  }
+}
+
+/* Large Tablets / Small Laptops (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .breadcrumbs {
+    padding: 1rem 2rem;
+  }
+
+  .impressum_intro_container {
+    padding: 2.5rem 2rem;
+  }
+
+  .impressum_title {
+    font-size: 2.5rem;
+  }
+  .impressum_description {
+    font-size: 1.5rem;
+  }
+}
+
+/* Desktops (1025px - 1280px) */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .breadcrumbs {
+    padding: 1rem 2rem;
+  }
+
+  .impressum_intro_container {
+    padding: 2.5rem 2rem;
+  }
+
+  .impressum_title {
+    font-size: 2.5rem;
+  }
+  .impressum_description {
+    font-size: 1.5rem;
+  }
+}
+
+/* Large Desktops (1281px - 1535px) */
+@media (min-width: 1281px) and (max-width: 1535px) {
+  .breadcrumbs {
+    padding: 1rem 3rem;
+  }
+
+  .impressum_intro_container {
+    padding: 2.5rem 3rem;
+  }
+
+  .impressum_title {
+    font-size: 2.5rem;
+  }
+  .impressum_description {
+    font-size: 1.5rem;
+  }
+}
+
+/* Extra Large Desktops (>=1536px) */
+@media (min-width: 1536px) and (max-width: 2200px) {
+  .breadcrumbs {
+    padding: 1rem 3rem;
+  }
+
+  .impressum_intro_container {
+    padding: 2.5rem 3rem;
+  }
+
+  .impressum_title {
+    font-size: 2.5rem;
+  }
+  .impressum_description {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 2200px) {
+  .breadcrumbs {
+    max-width: 2080px;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+  }
+
+  .impressum_intro_container {
+    padding: 2.5rem 2rem;
+    max-width: 2080px;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+    padding-bottom: 4rem;
+  
+  }
+
+  .impressum_title {
+    font-size: 3rem;
+  }
+  .impressum_description {
+    font-size: 2rem;
+  }
+}

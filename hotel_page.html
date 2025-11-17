@@ -1,0 +1,2073 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="frame-src 'self' https://www.google.com;"
+    />
+    <title>Hotel Page</title>
+    <link
+      rel="stylesheet"
+      href="hotel-datepicker-main/dist/css/hotel-datepicker.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/hotels.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+
+    <link rel="stylesheet" href="css/fancybox.css" />
+    <link rel="stylesheet" href="css/carousel.css" />
+    <link rel="stylesheet" href="css/tabby.min.css" />
+    <link rel="stylesheet" href="css/tabby-ui.css" />
+    <link rel="stylesheet" href="css/hotel_page.css" />
+  </head>
+  <body>
+    <header>
+      <div class="top-header">
+        <button class="btn">
+          Beratungstermin buchen
+          <img src="assets/images/right-chevron.png" alt="" class="btn-icon" />
+        </button>
+      </div>
+
+      <div class="bottom-header-container">
+        <div class="bottom-header">
+          <div class="logo-container">
+            <img
+              src="./assets/images/logo_meine_malediven.svg"
+              alt="Logo"
+              class="logo"
+            />
+          </div>
+
+          <div class="nav-items-container">
+            <nav class="nav-items">
+              <button class="hamburger" id="hamburger">☰</button>
+
+              <div class="mobile-menu" id="mobile-menu">
+                <ul class="nav-list">
+                  <li><a href="/">Startseite</a></li>
+                  <li><a href="/hotel_page.html">Hotels</a></li>
+                  <li><a href="/angebote">Angebote</a></li>
+                  <li><a href="/magazine_details.html">Nautilus Magazin</a></li>
+                  <!-- <li><a href="/nautilus-magazin">Nautilus Magazin</a></li> -->
+                </ul>
+
+                <div class="search-btn-container">
+                  <button class="search-iconli">
+                    <img
+                      class="search-icon"
+                      src="assets/images/glas_blue_001f41.png"
+                      alt="Suche"
+                    />
+                  </button>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="booking-layer-container">
+        <div class="booking-layer">
+          <div class="dropdown-container">
+            <div class="custom-dropdown" id="hotelDropdown">
+              <div class="selected">
+                <div class="hotel-autocomplete-wrapper">
+                  <input
+                    type="text"
+                    class="hotel-autocomplete-input"
+                    placeholder="Sagen Sie uns welches Hotel Sie suchen..."
+                  />
+                  <ul class="hotel-autocomplete-list"></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="datepicker-container">
+            <button id="hotel-datepicker" class="datepicker-btn" type="button">
+              <div class="datepicker-text">
+                <div class="labels">
+                  <span>Anreisedatum</span>
+                  <span>Abreisedatum</span>
+                </div>
+                <div class="values">
+                  <span id="checkin-date" class="placeholder">--</span>
+                  <span>-</span>
+                  <span id="checkout-date" class="placeholder">--</span>
+                </div>
+              </div>
+              <img
+                src="assets/images/calendar-icon.png"
+                alt="Calendar"
+                class="calendar-icon"
+              />
+            </button>
+          </div>
+
+          <div class="nights-container">
+            <label for="points" class="nights-label">Nächte</label>
+            <input
+              type="number"
+              id="points"
+              name="points"
+              step="1"
+              min="1"
+              value="1"
+              class="nights-input"
+            />
+          </div>
+
+          <div class="dropdown-container2">
+            <div class="custom-dropdown2" id="travellersDropdown">
+              <span class="selected-text">
+                <span class="main-text">Reisende</span>
+              </span>
+              <span class="arrow">▼</span>
+            </div>
+
+            <div class="modal-overlay" id="modal">
+              <div class="modal">
+                <div class="row">
+                  <span class="label">Erwachsene</span>
+                  <div class="counter">
+                    <button onclick="changeCount('adults', -1)">-</button>
+                    <span id="adultsCount">2</span>
+                    <button onclick="changeCount('adults', 1)">+</button>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <span class="label">Kinder</span>
+                  <div class="counter">
+                    <button onclick="changeCount('children', -1)">-</button>
+                    <span id="childrenCount">0</span>
+                    <button onclick="changeCount('children', 1)">+</button>
+                  </div>
+                </div>
+
+                <div id="childrenAges" class="children-ages"></div>
+
+                <div class="row add-room">
+                  <span class="label link-label">Zimmer hinzufügen</span>
+                  <div class="counter">
+                    <button onclick="changeCount('rooms', -1)">-</button>
+                    <span id="roomsCount">1</span>
+                    <button onclick="changeCount('rooms', 1)">+</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="dropdown-container">
+            <div class="custom-dropdown nation" id="nationalityDropdown">
+              <div class="selected">
+                Land
+                <span class="arrow">▼</span>
+              </div>
+              <ul class="dropdown-list">
+                <li data-value="germany">
+                  <span class="country-name">Deutschland</span>
+                </li>
+                <li data-value="austria">
+                  <span class="country-name">Österreich</span>
+                </li>
+                <li data-value="switzerland">
+                  <span class="country-name">Schweiz</span>
+                </li>
+                <li data-value="switzerland">
+                  <span class="country-name">andere</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="booking-btn-container">
+            <button class="booking-btn" type="button">Jetzt buchen</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="breadcrumbs">
+        <p class="breadcrumbs_text">
+          <a href="/" class="breadcrumb_link">Startseite</a>
+          <span class="breadcrumb_separator">›</span>
+          <a href="/resort-uebersicht" class="breadcrumb_link"
+            >Resort Übersicht</a
+          >
+          <span class="breadcrumb_separator">›</span>
+          <span class="breadcrumb_current">Huvafen Fushi</span>
+        </p>
+      </section>
+
+      <section class="hotel_name_container">
+        <div class="hotel_name">
+          <div>
+            <h1 class="hotel_name_title">Huvafen Fushi</h1>
+          </div>
+          <div class="stars">
+            <img src="./assets/images/star_yellow.png" alt="" />
+            <img src="./assets/images/star_yellow.png" alt="" />
+            <img src="./assets/images/star_yellow.png" alt="" />
+            <img src="./assets/images/star_yellow.png" alt="" />
+            <img
+              class="half_star"
+              src="./assets/images/half-star-yellow.png"
+              alt=""
+            />
+          </div>
+        </div>
+
+        <div class="hotel_location">
+          <div class="location_icon">
+            <img src="./assets/images/gps.png" alt="" />
+            <p>
+              Huvafen Fushi (Nakatchaafushi), Kaafu Atoll (Nord Male Atoll)
+              &nbsp; |
+            </p>
+          </div>
+          <div class="map_icon">
+            <img src="./assets/images/share.png" alt="Share icon" />
+            <p>
+              <a
+                href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3625.4799814903545!2d91.87386531450537!3d24.89372368400607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37510844e61a3a07%3A0x43d78d8e728d0d08!2sSylhet!5e0!3m2!1sen!2sbd!4v1699083818928!5m2!1sen!2sbd"
+                data-fancybox
+                data-type="iframe"
+                data-width="1000"
+                data-height="450"
+                title="View Huvafen Fushi on Google Maps"
+                class="map-link"
+              >
+                Hotel auf der Karte anzeigen
+              </a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="intro_text_wrapper">
+        <div class="intro_text_container">
+          <div class="intro_text">
+            <p>
+              Der Adaaran Club Rannalhi ist ein beliebtes 4-Sterne All-Inclusive
+              Resort im Kaafu Atoll, nur 34 km vom Flughafen Malé entfernt. Die
+              malerische Insel bietet 122 komfortable Zimmer in zwei Kategorien.
+              Das Resort überzeugt mit einem traumhaften Sandstrand und einer
+              türkisblauen Lagune – ideal zum Schwimmen, Schnorcheln und
+              Tauchen. Das Hausriff mit einer Tiefe von bis zu 20 Metern
+              begeistert Anfänger und erfahrene Taucher mit einer bunten
+              Unterwasserwelt. Auch Zugang zu erstklassigen Tauchplätzen rund um
+              Malé ist geboten.
+            </p>
+            <p>
+              Kulinarisch erwartet Gäste internationale Küche im
+              Buffetrestaurant sowie abwechslungsreiche Themenabende. Für aktive
+              Urlauber gibt es kostenfreie Freizeitangebote wie Beachvolleyball,
+              Fußball und Tischtennis. Das mehrsprachige Team sorgt für
+              exzellenten Service und unvergessliche Malediven-Momente.
+            </p>
+          </div>
+
+          <div class="intro_section">
+            <div class="intro_image">
+              <div class="intro_top_images">
+                <img
+                  src="assets/images/badget_recom_4_honeymooner.gif"
+                  alt="Top Image 1"
+                />
+                <img
+                  src="assets/images/badget_recom_couples-Picsart-BackgroundRemover.png"
+                  alt="Top Image 2"
+                />
+              </div>
+
+              <div class="intro_bottom_texts">
+                <div class="text_box">
+                  <p>Luxus Resort</p>
+                </div>
+                <div class="text_box">
+                  <p>Paare, Familien & Taucher</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="info_box">
+            <img
+              src="assets/images/warning.png"
+              alt="Icon"
+              class="warning-icon"
+            />
+            <h4>Achtung bei der Einreise auf die Malediven!</h4>
+            <p>
+              Es gibt Fake-Webseiten die für das Einreiseformular Geld verlan.
+            </p>
+            <img
+              src="assets/images/modal_bottom_img.png"
+              alt="Decorative Image"
+              class="bottom-img"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="modal_section">
+        <div class="two-column-section">
+          <div class="left-column">
+            <div>
+              <h3 class="left-col-title">Zimmer & Suiten</h3>
+            </div>
+            <div class="card">
+              <div class="card-left">
+                <img
+                  src="assets/images/image_content_tropical-beach.webp"
+                  alt="Card Image"
+                />
+              </div>
+              <div class="card-right">
+                <img
+                  src="assets/images/badget_recom_couples-Picsart-BackgroundRemover.png"
+                  alt="Top Icon"
+                  class="top-icon"
+                />
+                <h3>Beach Bungalow mit Pool (125 m²)</h3>
+                <p>Max. 2 Erwachsene + 2 Kinder oder 3 Erwachsene</p>
+                <button
+                  class="card-btn"
+                  data-fancybox
+                  data-src="#modal-content"
+                >
+                  Zimmerbeschreibung und Bilder
+                </button>
+
+                <!-- <button data-fancybox class="card-btn" data-src="#dialog-content">
+                Zimmerbeschreibung und Bilder
+              </button> -->
+                <!-- <button class="card-btn">Zimmerbeschreibung und Bilder →</button> -->
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-left">
+                <img
+                  src="assets/images/image_content_tropical-beach.webp"
+                  alt="Card Image"
+                />
+              </div>
+              <div class="card-right">
+                <img
+                  src="assets/images/badget_recom_couples-Picsart-BackgroundRemover.png"
+                  alt="Top Icon"
+                  class="top-icon"
+                />
+                <h3>Beach Bungalow mit Pool (125 m²)</h3>
+                <p>Max. 2 Erwachsene + 2 Kinder oder 3 Erwachsene</p>
+                <button
+                  class="card-btn"
+                  data-fancybox
+                  data-src="#modal-content"
+                >
+                  Zimmerbeschreibung und Bilder
+                </button>
+
+                <!-- <button data-fancybox class="card-btn" data-src="#dialog-content">
+                Zimmerbeschreibung und Bilder
+              </button> -->
+                <!-- <button class="card-btn">Zimmerbeschreibung und Bilder →</button> -->
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-left">
+                <img
+                  src="assets/images/image_content_tropical-beach.webp"
+                  alt="Card Image"
+                />
+              </div>
+              <div class="card-right">
+                <img
+                  src="assets/images/badget_recom_couples-Picsart-BackgroundRemover.png"
+                  alt="Top Icon"
+                  class="top-icon"
+                />
+                <h3>Beach Bungalow mit Pool (125 m²)</h3>
+                <p>Max. 2 Erwachsene + 2 Kinder oder 3 Erwachsene</p>
+                <button
+                  class="card-btn"
+                  data-fancybox
+                  data-src="#modal-content"
+                >
+                  Zimmerbeschreibung und Bilder
+                </button>
+
+                <!-- <button data-fancybox class="card-btn" data-src="#dialog-content">
+                Zimmerbeschreibung und Bilder
+              </button> -->
+                <!-- <button class="card-btn">Zimmerbeschreibung und Bilder →</button> -->
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-left">
+                <img
+                  src="assets/images/image_content_tropical-beach.webp"
+                  alt="Card Image"
+                />
+              </div>
+              <div class="card-right">
+                <img
+                  src="assets/images/badget_recom_couples-Picsart-BackgroundRemover.png"
+                  alt="Top Icon"
+                  class="top-icon"
+                />
+                <h3>Beach Bungalow mit Pool (125 m²)</h3>
+                <p>Max. 2 Erwachsene + 2 Kinder oder 3 Erwachsene</p>
+                <button
+                  class="card-btn"
+                  data-fancybox
+                  data-src="#modal-content"
+                >
+                  Zimmerbeschreibung und Bilder
+                </button>
+
+                <!-- <button data-fancybox class="card-btn" data-src="#dialog-content">
+                Zimmerbeschreibung und Bilder
+              </button> -->
+                <!-- <button class="card-btn">Zimmerbeschreibung und Bilder →</button> -->
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-left">
+                <img
+                  src="assets/images/image_content_tropical-beach.webp"
+                  alt="Card Image"
+                />
+              </div>
+              <div class="card-right">
+                <img
+                  src="assets/images/badget_recom_couples-Picsart-BackgroundRemover.png"
+                  alt="Top Icon"
+                  class="top-icon"
+                />
+                <h3>Beach Bungalow mit Pool (125 m²)</h3>
+                <p>Max. 2 Erwachsene + 2 Kinder oder 3 Erwachsene</p>
+                <button
+                  class="card-btn"
+                  data-fancybox
+                  data-src="#modal-content"
+                >
+                  Zimmerbeschreibung und Bilder
+                </button>
+
+                <!-- <button data-fancybox class="card-btn" data-src="#dialog-content">
+                Zimmerbeschreibung und Bilder
+              </button> -->
+                <!-- <button class="card-btn">Zimmerbeschreibung und Bilder →</button> -->
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-left">
+                <img
+                  src="assets/images/image_content_tropical-beach.webp"
+                  alt="Card Image"
+                />
+              </div>
+              <div class="card-right">
+                <img
+                  src="assets/images/badget_recom_couples-Picsart-BackgroundRemover.png"
+                  alt="Top Icon"
+                  class="top-icon"
+                />
+                <h3>Beach Bungalow mit Pool (125 m²)</h3>
+                <p>Max. 2 Erwachsene + 2 Kinder oder 3 Erwachsene</p>
+                <button
+                  class="card-btn"
+                  data-fancybox
+                  data-src="#modal-content"
+                >
+                  Zimmerbeschreibung und Bilder
+                </button>
+
+                <!-- <button data-fancybox class="card-btn" data-src="#dialog-content">
+                Zimmerbeschreibung und Bilder
+              </button> -->
+                <!-- <button class="card-btn">Zimmerbeschreibung und Bilder →</button> -->
+              </div>
+            </div>
+
+            <p>
+              Eventuell sind weitere Zimmerkategorien vorhanden. Bitte fragen
+              Sie gesondert an: Tel: 0800 555 62 73
+            </p>
+
+            <div class="tabs">
+              <ul data-tabs>
+                <li><a data-tabby-default href="#restaurant">Restaurant</a></li>
+                <li><a href="#verpflegung">Verpflegungspläne</a></li>
+                <li><a href="#getraenke">Getränkepakete</a></li>
+                <li><a href="#gebuehr">Gegen Gebühr</a></li>
+              </ul>
+
+              <div
+                id="restaurant"
+                class="tab-panel"
+                role="tabpanel"
+                aria-hidden="true"
+              >
+                <h2>Restaurants & Bars</h2>
+                <p>
+                  Das Resort bietet eine vielfältige kulinarische Auswahl mit
+                  sechs Restaurants, vier Bars, einem exklusiven Weinkeller und
+                  einem Foodtruck, die gemeinsam internationale Spezialitäten,
+                  feine Weine und kreative Gourmetküche auf höchstem Niveau
+                  servieren.
+                </p>
+
+                <div class="cards-container_tab">
+                  <div class="card_tab">
+                    <img
+                      src="assets/images/image_second_box_right.webp"
+                      alt="The Liquid Pool"
+                    />
+                    <div class="card-content_tab">
+                      <h3>The Liquid Pool</h3>
+                      <p>
+                        Bar am Pool mit Snacks. Großzügig und elegant
+                        gestalteter Bereich mit luftigem Ambiente und einem 50
+                        Meter langen Pool, der einen atemberaubenden Blick auf
+                        das tiefblaue Meer bietet. Tagsüber köstliche Snacks und
+                        leichte Knabbereien. Fish-and-Chips-Service täglich von
+                        17:00 bis 19:00 Uhr. Ganzjährig abwechslungsreiche
+                        Themenabende und stimmungsvolle Live-Auftritte.
+                      </p>
+                      <h4>Öffnungszeiten</h4>
+                      <ul>
+                        <li>Geöffnet von 9:00 Uhr - 1:00 Uhr</li>
+                        <li>
+                          Fish and Chips-Service (oder Snacks) von 17:00 bis
+                          19:00 Uhr
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="card_tab">
+                    <img
+                      src="assets/images/image_second_box_right.webp"
+                      alt="The Liquid Pool"
+                    />
+                    <div class="card-content_tab">
+                      <h3>The Liquid Pool</h3>
+                      <p>
+                        Bar am Pool mit Snacks. Großzügig und elegant
+                        gestalteter Bereich mit luftigem Ambiente und einem 50
+                        Meter langen Pool, der einen atemberaubenden Blick auf
+                        das tiefblaue Meer bietet. Tagsüber köstliche Snacks und
+                        leichte Knabbereien. Fish-and-Chips-Service täglich von
+                        17:00 bis 19:00 Uhr. Ganzjährig abwechslungsreiche
+                        Themenabende und stimmungsvolle Live-Auftritte.
+                      </p>
+                      <h4>Öffnungszeiten</h4>
+                      <ul>
+                        <li>Geöffnet von 9:00 Uhr - 1:00 Uhr</li>
+                        <li>
+                          Fish and Chips-Service (oder Snacks) von 17:00 bis
+                          19:00 Uhr
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="card_tab">
+                    <img
+                      src="assets/images/image_second_box_right.webp"
+                      alt="The Liquid Pool"
+                    />
+                    <div class="card-content_tab">
+                      <h3>The Liquid Pool</h3>
+                      <p>
+                        Bar am Pool mit Snacks. Großzügig und elegant
+                        gestalteter Bereich mit luftigem Ambiente und einem 50
+                        Meter langen Pool, der einen atemberaubenden Blick auf
+                        das tiefblaue Meer bietet. Tagsüber köstliche Snacks und
+                        leichte Knabbereien. Fish-and-Chips-Service täglich von
+                        17:00 bis 19:00 Uhr. Ganzjährig abwechslungsreiche
+                        Themenabende und stimmungsvolle Live-Auftritte.
+                      </p>
+                      <h4>Öffnungszeiten</h4>
+                      <ul>
+                        <li>Geöffnet von 9:00 Uhr - 1:00 Uhr</li>
+                        <li>
+                          Fish and Chips-Service (oder Snacks) von 17:00 bis
+                          19:00 Uhr
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="card_tab">
+                    <img
+                      src="assets/images/image_second_box_right.webp"
+                      alt="The Liquid Pool"
+                    />
+                    <div class="card-content_tab">
+                      <h3>The Liquid Pool</h3>
+                      <p>
+                        Bar am Pool mit Snacks. Großzügig und elegant
+                        gestalteter Bereich mit luftigem Ambiente und einem 50
+                        Meter langen Pool, der einen atemberaubenden Blick auf
+                        das tiefblaue Meer bietet. Tagsüber köstliche Snacks und
+                        leichte Knabbereien. Fish-and-Chips-Service täglich von
+                        17:00 bis 19:00 Uhr. Ganzjährig abwechslungsreiche
+                        Themenabende und stimmungsvolle Live-Auftritte.
+                      </p>
+                      <h4>Öffnungszeiten</h4>
+                      <ul>
+                        <li>Geöffnet von 9:00 Uhr - 1:00 Uhr</li>
+                        <li>
+                          Fish and Chips-Service (oder Snacks) von 17:00 bis
+                          19:00 Uhr
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="card_tab">
+                    <img
+                      src="assets/images/image_second_box_right.webp"
+                      alt="The Liquid Pool"
+                    />
+                    <div class="card-content_tab">
+                      <h3>The Liquid Pool</h3>
+                      <p>
+                        Bar am Pool mit Snacks. Großzügig und elegant
+                        gestalteter Bereich mit luftigem Ambiente und einem 50
+                        Meter langen Pool, der einen atemberaubenden Blick auf
+                        das tiefblaue Meer bietet. Tagsüber köstliche Snacks und
+                        leichte Knabbereien. Fish-and-Chips-Service täglich von
+                        17:00 bis 19:00 Uhr. Ganzjährig abwechslungsreiche
+                        Themenabende und stimmungsvolle Live-Auftritte.
+                      </p>
+                      <h4>Öffnungszeiten</h4>
+                      <ul>
+                        <li>Geöffnet von 9:00 Uhr - 1:00 Uhr</li>
+                        <li>
+                          Fish and Chips-Service (oder Snacks) von 17:00 bis
+                          19:00 Uhr
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="card_tab">
+                    <img
+                      src="assets/images/image_second_box_right.webp"
+                      alt="The Liquid Pool"
+                    />
+                    <div class="card-content_tab">
+                      <h3>The Liquid Pool</h3>
+                      <p>
+                        Bar am Pool mit Snacks. Großzügig und elegant
+                        gestalteter Bereich mit luftigem Ambiente und einem 50
+                        Meter langen Pool, der einen atemberaubenden Blick auf
+                        das tiefblaue Meer bietet. Tagsüber köstliche Snacks und
+                        leichte Knabbereien. Fish-and-Chips-Service täglich von
+                        17:00 bis 19:00 Uhr. Ganzjährig abwechslungsreiche
+                        Themenabende und stimmungsvolle Live-Auftritte.
+                      </p>
+                      <h4>Öffnungszeiten</h4>
+                      <ul>
+                        <li>Geöffnet von 9:00 Uhr - 1:00 Uhr</li>
+                        <li>
+                          Fish and Chips-Service (oder Snacks) von 17:00 bis
+                          19:00 Uhr
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                id="verpflegung"
+                class="tab-panel"
+                role="tabpanel"
+                aria-hidden="true"
+              >
+                <div class="tab-info-boxes">
+                  <div class="tab-info-box">
+                    <p>
+                      <span> Im Preis enthalten:</span> Frühstücksbuffet,
+                      Softdrinks
+                    </p>
+                  </div>
+                  <div class="tab-info-box">
+                    <p>
+                      <span>Verfügbare Verpflegungspläne: </span> Frühstück,
+                      Halbpension, All-Inclusive
+                    </p>
+                  </div>
+                  <div class="tab-info-box">
+                    <p>
+                      <span>Mögliche Upgrades:</span>
+                      Premium All-Inclusive möglich
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                id="getraenke"
+                class="tab-panel"
+                role="tabpanel"
+                aria-hidden="true"
+              >
+                <div class="drinks_title">
+                  <h3>Premium Getränkepaket</h3>
+                  <p>
+                    12 Stunden (von 7:00 Uhr morgens bis 7:00 Uhr abends) in
+                    allen Restaurants, Bars und der Minibar. Es gelten die
+                    Geschäftsbedingungen.
+                  </p>
+                </div>
+
+                <div class="tab-drinks-grid">
+                  <div class="tab-drinks-row">
+                    <div class="tab-drinks-left">Minibar in der Villa</div>
+                    <div class="tab-drinks-right">
+                      Erfrischungsgetränke (Minibar wird einmal täglich
+                      aufgefüllt)
+                    </div>
+                  </div>
+
+                  <div class="tab-drinks-row">
+                    <div class="tab-drinks-left">Erfrischungsgetränke</div>
+                    <div class="tab-drinks-right">
+                      Alle im Menü verfügbaren Erfrischungsgetränke
+                    </div>
+                  </div>
+
+                  <div class="tab-drinks-row">
+                    <div class="tab-drinks-left">Frisch gepresste Säfte</div>
+                    <div class="tab-drinks-right">
+                      Alle frisch gepressten Säfte, Milchshakes und Smoothies,
+                      die an der Bar angeboten werden
+                    </div>
+                  </div>
+
+                  <div class="tab-drinks-row">
+                    <div class="tab-drinks-left">Wasser</div>
+                    <div class="tab-drinks-right">
+                      Anantara stilles Wasser & San Pellegrino Sprudelwasser
+                    </div>
+                  </div>
+
+                  <div class="tab-drinks-row">
+                    <div class="tab-drinks-left">Bier</div>
+                    <div class="tab-drinks-right">
+                      Große Auswahl an internationalen Bieren
+                    </div>
+                  </div>
+
+                  <div class="tab-drinks-row">
+                    <div class="tab-drinks-left">Spirituosen</div>
+                    <div class="tab-drinks-right">
+                      Große Auswahl an Marken-Spirituosen
+                    </div>
+                  </div>
+
+                  <div class="tab-drinks-row">
+                    <div class="tab-drinks-left">Hauscocktails</div>
+                    <div class="tab-drinks-right">
+                      Große Auswahl an Signature-Cocktails
+                    </div>
+                  </div>
+
+                  <div class="tab-drinks-row">
+                    <div class="tab-drinks-left">Mocktails</div>
+                    <div class="tab-drinks-right">
+                      Alle an der Bar verfügbaren Mocktails
+                    </div>
+                  </div>
+
+                  <div class="tab-drinks-row">
+                    <div class="tab-drinks-left">Schaumwein</div>
+                    <div class="tab-drinks-right">
+                      NV Santa Margarita Prosecco, DOCG, Conegliano
+                      Valdobbiadene, Italien
+                    </div>
+                  </div>
+
+                  <div class="tab-drinks-row">
+                    <div class="tab-drinks-left">
+                      Weißwein, Rotwein, Roséwein
+                    </div>
+                    <div class="tab-drinks-right">
+                      Das Sommelier-Team hat sorgfältig Weine aus aller Welt
+                      ausgewählt
+                    </div>
+                  </div>
+
+                  <div class="tab-drinks-row">
+                    <div class="tab-drinks-left">Tee & Kaffee</div>
+                    <div class="tab-drinks-right">Tee, Kaffee, Eisgetränke</div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                id="gebuehr"
+                class="tab-panel tab-gebuehr"
+                role="tabpanel"
+                aria-hidden="true"
+              >
+                <h2 class="tab-gebuehr-title">Gegen Gebühr vor Ort buchbar</h2>
+
+                <div class="tab-gebuehr-grid">
+                  <div class="tab-gebuehr-row">
+                    <div class="tab-gebuehr-left">Destination Dining</div>
+                    <div class="tab-gebuehr-right">
+                      Private Dinner am Strand oder auf Ihrer Terrasse,
+                      Reservierung erforderlich
+                    </div>
+                  </div>
+
+                  <div class="tab-gebuehr-row">
+                    <div class="tab-gebuehr-left">Minibar</div>
+                    <div class="tab-gebuehr-right">
+                      Tägliche Auffüllung inklusive Wasser und Softdrinks.
+                      Alkoholische Getränke gegen Aufpreis.
+                    </div>
+                  </div>
+
+                  <div class="tab-gebuehr-row">
+                    <div class="tab-gebuehr-left"></div>
+                    <div class="tab-gebuehr-right"></div>
+                  </div>
+                </div>
+
+                <p class="tab-gebuehr-n">
+                  Preise dienen Ihrer Information und können sich jederzeit
+                  ändern.
+                </p>
+
+                <div class="tab-gebuehr-notes">
+                  <p class="tab-gebuehr-note">
+                    <strong>Vegetarische Optionen:</strong> Verfügbar, auf
+                    Wunsch auch gerne vegane und laktosefreie Speisen.
+                  </p>
+                  <p class="tab-gebuehr-note">
+                    <strong>Kinderregelung Verpflegung:</strong> Kinder bis 6
+                    Jahren kostenfrei, spezielle Kindermenüs vorhanden.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="right-column">
+            <div class="right-column-hotel-container">
+              <img
+                src="assets/images/right_side_img.png"
+                alt="Resort"
+                class="right-image"
+              />
+              <h3 class="right-column-hotel-name">Huaven Fushi</h3>
+
+              <h2>Rannalhi (Kaafu Atoll)</h2>
+              <p>
+                Die Insel Rannalhi befindet sich am Südende des Kaafu Atolls
+                (Süd Malé Atolls) und beherbergt das 4 Resort Adaaran Club
+                Rannalhi. Die Breite der Insel beträgt ca. 143 m, während sie
+                eine Länge von ca. 405 m aufweist, die Gesamtfläche beträgt ca.
+                5 ha.
+              </p>
+              <p>
+                Wer die Insel einmal umlaufen möchte, muss ca. 970 m laufen.
+                Rannalhi ist ca. 35 km von Malé entfernt.
+              </p>
+              <p>
+                Rannalhi ist keine Barfußinsel und ist besonders ansprechend für
+                Paare und Singles. Die am nächsten gelegene Insel ist die
+                Resort-Insel Fihalholi, die sich ca. 2,8 km südlich von Rannalhi
+                befindet.
+              </p>
+
+              <button class="info_button">Inselplan</button>
+            </div>
+
+            <div>
+              <h2>Hausriff</h2>
+              <p>
+                Das Adaaran Club Rannalhi hat ein eigenes Riff welches sich etwa
+                20 bis 100 Meter von der Insel entfernt befindet. Das Hausriff
+                fällt bis auf 20 Meter ab und bietet ein atemberaubendes
+                Taucherlebnis, ideal für Kurs- und Entdeckungstauchgänge.
+              </p>
+              <p>
+                Ob beim Tauchen am hoteleigenen Riff oder an den nahegelegenen
+                Tauchspots, hier erwartet Sie ein breitgefächertes Angebot an
+                Sport- und Tauchaktivitäten. Entdecken Sie leuchtende Korallen,
+                kleine, faszinierende Korallenfische, elegante Stachelrochen,
+                die sanft durchs Wasser schweben, oder Haie, die den Meeresgrund
+                durchstreifen.
+              </p>
+              <p>
+                Der Adaaran Club Rannalhi bietet reichlich Vergnügen unter der
+                Sonne und beim Surfen, ergänzt durch eine Vielzahl an
+                Wassersport- möglichkeiten.
+              </p>
+            </div>
+
+            <div class="map_img_container">
+              <a
+                href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3625.4799814903545!2d91.87386531450537!3d24.89372368400607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37510844e61a3a07%3A0x43d78d8e728d0d08!2sSylhet!5e0!3m2!1sen!2sbd!4v1699083818928!5m2!1sen!2sbd"
+                data-fancybox
+                data-type="iframe"
+                data-width="1000"
+                data-height="450"
+                title="View Huvafen Fushi on Google Maps"
+                class="map-link"
+              >
+                <img
+                  class="map_img"
+                  src="./assets/images/maps_hotelpage.jpg"
+                  alt=""
+                />
+              </a>
+            </div>
+
+            <div class="image_gallery_container">
+              <div>
+                <h2>Bildergalerie</h2>
+              </div>
+              <div class="image_gallery">
+                <a
+                  data-fancybox="gallery1"
+                  data-src="https://lipsum.app/id/2/1600x1200"
+                >
+                  <img src="https://lipsum.app/id/2/200x150" alt="" />
+                </a>
+
+                <a
+                  data-fancybox="gallery1"
+                  data-src="https://lipsum.app/id/3/1600x1200"
+                >
+                  <img src="https://lipsum.app/id/3/200x150" alt="" />
+                </a>
+
+                <a
+                  data-fancybox="gallery1"
+                  data-src="https://lipsum.app/id/4/1600x1200"
+                >
+                  <img src="https://lipsum.app/id/4/200x150" alt="" />
+                </a>
+                <a
+                  data-fancybox="gallery1"
+                  data-src="https://lipsum.app/id/2/1600x1200"
+                >
+                  <img src="https://lipsum.app/id/2/200x150" alt="" />
+                </a>
+
+                <a
+                  data-fancybox="gallery1"
+                  data-src="https://lipsum.app/id/3/1600x1200"
+                >
+                  <img src="https://lipsum.app/id/3/200x150" alt="" />
+                </a>
+
+                <a
+                  data-fancybox="gallery1"
+                  data-src="https://lipsum.app/id/4/1600x1200"
+                >
+                  <img src="https://lipsum.app/id/4/200x150" alt="" />
+                </a>
+              </div>
+            </div>
+
+            <div class="video_gallery_container">
+              <div>
+                <h2>Videogalerie</h2>
+              </div>
+              <div class="video_gallery">
+                <a
+                  href="https://vimeo.com/191947042"
+                  data-fancybox
+                  data-aspect-ratio="2 / 1"
+                >
+                  <img
+                    src="https://i.vimeocdn.com/video/604514162-856dfce17c1b211a166242452bd54deb1e27d29ba092a09a9d17e58a511d0fd6-d_640?region=us"
+                    alt="Video poster"
+                  />
+                </a>
+
+                <a
+                  href="https://vimeo.com/191947042"
+                  data-fancybox
+                  data-aspect-ratio="2 / 1"
+                >
+                  <img
+                    src="https://i.vimeocdn.com/video/604514162-856dfce17c1b211a166242452bd54deb1e27d29ba092a09a9d17e58a511d0fd6-d_640?region=us"
+                    alt="Video poster"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="hotel-info-section">
+        <h2 class="hotel-info-title">Hotelausstattung & Services</h2>
+        <hr class="h_line" />
+
+        <div class="hotel-info-images">
+          <img
+            src="assets/images/image_wedding_filter_37159123_l.webp"
+            alt="Hotel Image 1"
+          />
+          <img
+            src="assets/images/images_first_box_left.webp"
+            alt="Hotel Image 2"
+          />
+          <img
+            src="assets/images/image_content_seaplane-at-maldives.webp"
+            alt="Hotel Image 3"
+          />
+          <img
+            src="assets/images/image_family_filter_iStock-1143565589.webp"
+            alt="Hotel Image 4"
+          />
+          <img
+            src="assets/images/image_wedding_filter_37159123_l.webp"
+            alt="Hotel Image 5"
+          />
+        </div>
+
+        <div class="hotel-info-columns">
+          <div class="hotel-info-column">
+            <h3>Hotelausstattung</h3>
+
+            <ul>
+              <li>4 Sterne All-Inclusive-Resort</li>
+              <li>Ideal für Singles und Paare</li>
+              <li>122 Zimmer in 2 Zimmerkategorien</li>
+              <li>1 Restaurant, 2 Bars</li>
+              <li>Boutique</li>
+              <li>Juweliereshop</li>
+              <li>Kindereinrichtungen</li>
+              <li>Klinik</li>
+              <li>Moschee vor Ort</li>
+              <li>Souvenirshop</li>
+              <li>Spa</li>
+              <li>Tauchschule</li>
+              <li>Wassersportzentrum</li>
+            </ul>
+
+            <h3>Gästeservice</h3>
+            <ul>
+              <li>24 Std. Krankenschwester (englisch)</li>
+              <li>24 Std. Rezeption</li>
+              <li>Arzt auf Abruf</li>
+              <li>Hochzeitspakete</li>
+              <li>Kinderstühle</li>
+              <li>Portierdienste</li>
+              <li>Sonnenstühle</li>
+              <li>Währungstausch</li>
+              <li>Wäschereiservice</li>
+            </ul>
+
+            <h3>Spa und Wellness Angebote</h3>
+            <ul>
+              <li>Reflexzonenzentrum</li>
+              <li>Reflexzonenmassage Kopf, Ohr & Hand</li>
+              <li>Unterschiedliche Massagen</li>
+            </ul>
+
+            <h3>Unterricht / Kurse / Training</h3>
+            <ul>
+              <li>Fly Board Lektion</li>
+              <li>Katamaran Kurz- und Grundkurs</li>
+              <li>Katamaran Privatunterricht</li>
+              <li>Schnorchelkurs (inkl. Schnorchelset)</li>
+              <li>Stand-Up Paddle Board Lektion</li>
+              <li>Wasserski oder Wakeboard Lektion</li>
+              <li>Windsurf Kurz- und Grundkurs</li>
+              <li>Windsurf Privatkurs</li>
+            </ul>
+          </div>
+
+          <div class="hotel-info-column">
+            <h3>Sportangebote an Land</h3>
+            <ul>
+              <li>Strandfußball</li>
+              <li>Strand-Volleyball</li>
+            </ul>
+
+            <h3>Wassersportangebote</h3>
+            <ul>
+              <li>Bananenboot Fahrten</li>
+              <li>Flyboard</li>
+              <li>Fun-Tube-Fahrten (Einzel oder Doppel)</li>
+              <li>Jet Surfboards</li>
+              <li>Jet-Ski</li>
+              <li>Katamaran segeln</li>
+              <li>Schnorcheln</li>
+              <li>Seabob</li>
+              <li>Segeln</li>
+              <li>Tauchen / Gerätetauchen</li>
+              <li>Tiefseefischen</li>
+              <li>Wakeboard fahren</li>
+              <li>Wasserski</li>
+              <li>Windsurfen</li>
+            </ul>
+
+            <h3>Freizeitangebote</h3>
+            <ul>
+              <li>Tischtennis</li>
+            </ul>
+
+            <h3>Ausflüge</h3>
+            <ul>
+              <li>Angeln am Morgen</li>
+              <li>Angeln bei Sonnenuntergang/Abend</li>
+              <li>Besuch eines lokalen Dorfes</li>
+              <li>Delfin-Safari</li>
+              <li>Erkundung des Meeres bei Sonnenaufgang</li>
+              <li>Fly Board Ausflüge</li>
+              <li>Fototour bei Sonnenuntergang</li>
+              <li>Hochseefischen</li>
+              <li>Inselhüpfen</li>
+              <li>Jet-Ski-Ausflüge</li>
+              <li>Katamaran-Ausflüge</li>
+              <li>Schnorchelausflüge</li>
+              <li>Speedboot Ausflüge</li>
+              <li>Stadtrundfahrt</li>
+            </ul>
+          </div>
+
+          <div class="hotel-info-column">
+            <h3>Unterhaltung</h3>
+            <ul>
+              <li>DJ-Musik am Abend in der Cocktailbar</li>
+              <li>DJ-Nacht im Freien, zweimal pro Woche</li>
+              <li>Karaoke-Abend</li>
+              <li>Strandparty mit Lagerfeuer (einmal pro Woche)</li>
+              <li>Tägliche Unterhaltung mit Live-Band</li>
+              <li>Unterhaltung (sehr limitiertes Angebot)</li>
+            </ul>
+
+            <h3>Verleih/Vermietung</h3>
+            <ul>
+              <li>Jet Ski Verleih</li>
+              <li>Kanuverleih</li>
+              <li>Katamaran Vermietung</li>
+              <li>Private Schnellbootvermietung</li>
+              <li>Seabob-Verleih</li>
+              <li>Stand-Up Paddle Board Verleih</li>
+              <li>Verleih von Maske, Schnorchel und Flossen</li>
+              <li>Verleih von Schwimmwesten</li>
+              <li>Windsurfing Materialverleih</li>
+            </ul>
+
+            <h3>Verpflegungsoptionen</h3>
+            <ul>
+              <li>All-inclusive-Verpflegungsplan</li>
+              <li>Destination Dining</li>
+              <li>Kindermenü</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="info-section">
+        <h2 class="info-title">Weitere Informationen</h2>
+        <div class="info-grid">
+          <div class="info-column">
+            <div class="info-card">
+              <img
+                src="assets/images/drone.jpg"
+                alt="Drohne"
+                class="info-icon"
+              />
+              <div class="info-content">
+                <h3>Drohne</h3>
+                <p>
+                  Aus Datenschutzgründen ist der Betrieb von unbemannten
+                  Luftfahrtsystemen oder Drohnen im Adaaran Club Rannalhi
+                  verboten. Fotografieren ist für den persönlichen Gebrauch
+                  erlaubt.
+                  <a href=""
+                    >Informationen zur Nutzung von Drohnen auf den Malediven.</a
+                  >
+                </p>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <img src="assets/images/wifi.jpg" alt="Wi-Fi" class="info-icon" />
+              <div class="info-content">
+                <h3>Wi-Fi / Internet</h3>
+                <p>
+                  Wi-Fi steht auf Ihren Zimmer und in den meisten öffentlichen
+                  Bereichen des Resorts kostenlos zur Verfügung. Wi-Fi ist in
+                  den Wasserbungalows nur gegen Gebühr verfügbar.
+                </p>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <img
+                src="assets/images/for_wheelchairs.jpg"
+                alt="Mobilität"
+                class="info-icon"
+              />
+              <div class="info-content">
+                <h3>Personen mit eingeschränkter Mobilität</h3>
+                <p>
+                  Das Resort ist für Personen mit eingeschränkter Mobilität
+                  geeignet.
+                </p>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <img
+                src="assets/images/creditcards.jpg"
+                alt="Kreditkarten"
+                class="info-icon"
+              />
+              <div class="info-content">
+                <h3>Das Hotel akzeptiert folgende Kreditkarten</h3>
+                <div class="card-logos">
+                  <img src="assets/images/visa.svg" alt="Zahlung mit Visa" />
+                  <img
+                    src="assets/images/mastercard-cc.svg"
+                    alt="Zahlung mit Mastercard"
+                  />
+                  <img
+                    src="assets/images/rechnung_logo.svg"
+                    alt="Zahlung auf Rechnung"
+                  />
+                  <img src="assets/images/visa.svg" alt="Zahlung mit Visa" />
+                </div>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <img
+                src="assets/images/curency_cash.jpg"
+                alt="Währungsumtausch"
+                class="info-icon"
+              />
+              <div class="info-content">
+                <h3>Währungsumtausch - Bargeld</h3>
+                <p>
+                  Zahlungen in Fremdwährung werden nicht akzeptiert. Bitte
+                  beachten Sie, dass gemäß den Bestimmungen und Vorschriften der
+                  maledivischen Banken nur USD-Banknoten akzeptiert werden, die
+                  2006 oder früher ausgestellt wurden.
+                </p>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <img
+                src="assets/images/opening_renovation.jpg"
+                alt="Eröffnung"
+                class="info-icon"
+              />
+              <div class="info-content">
+                <h3>Eröffnung / Renovierung</h3>
+                <p>Hierzu liegen uns zur Zeit keine Informationen vor.</p>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <img
+                src="assets/images/electricity.jpg"
+                alt="Strom"
+                class="info-icon"
+              />
+              <div class="info-content">
+                <h3>Strom</h3>
+                <p>
+                  Die Spannung in der Anlage beträgt 220 Volt. Die
+                  Rasiersteckdose in Ihrem Badezimmer ist sowohl für 220 V als
+                  auch für 110 V ausgelegt. Eine Taschenlampe für den
+                  Abendspaziergang und für den Notfall ist in jeder Villa
+                  vorhanden. Multi-Stecker-Adapter sind in allen Villen
+                  vorhanden. Sollten Sie einen zusätzlichen benötigen, wenden
+                  Sie sich bitte an die Rezeption.
+                </p>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <img
+                src="assets/images/child-policy.jpg"
+                alt="Kinder"
+                class="info-icon"
+              />
+              <div class="info-content">
+                <h3>Kinder Regelung</h3>
+                <p>
+                  Dieses Hotel hat die folgenden Altersbegrenzungen. (Es gilt
+                  das jeweilige Alter bei Abreise. Nur gültig für Zimmerpreise.)
+                </p>
+                <ul>
+                  <li>Baby = 0 bis 1,99 Jahre</li>
+                  <li>Kind = 2 bis 11,99 Jahre</li>
+                  <li>Erwachsene = ab 12 Jahre</li>
+                </ul>
+                <p>
+                  Bitte beachten Sie, dass es für Transfer und Verpflegung
+                  andere Altersbegrenzungen geben kann.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-column">
+            <div class="info-card">
+              <img
+                src="assets/images/check-in_check-out.jpg"
+                alt="Check-in"
+                class="info-icon"
+              />
+              <div class="info-content">
+                <h3>Check-in / Check-out</h3>
+                <p>
+                  Check-in: <span class="time"> &nbsp; 15:00 Uhr</span><br />
+                  Check-out: <span class="time">12:00 Uhr</span>
+                </p>
+                <div class="instructions">
+                  <p class="instructions_title">
+                    Hinweise zum Check-in / Check-out
+                  </p>
+                  <p>
+                    Der Zugang zu den Zimmern vor Check-in wird nur nach Maßgabe
+                    der Verfügbarkeit gewährt. Um einen frühen Check-in zu
+                    garantieren, buchen Sie bitte eine Nacht vor dem
+                    tatsächlichen Check-in Datum. Ein später Check-out kann vom
+                    Resort arrangiert werden, je nach Verfügbarkeit und gegen
+                    Gebühr.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <img
+                src="assets/images/minimum-stay.jpg"
+                alt="Mindestaufenthalt"
+                class="info-icon"
+              />
+              <div class="info-content">
+                <h3>Mindestaufenthalt</h3>
+                <p>
+                  Mindestaufenthalt vom 27. Dezember bis 05. Januar = 5 Nächte
+                  <br />
+                  Mindestaufenthalt Rest des Jahres = 3 Nächte <br />
+                  <br />
+                  Sonderpreise oder Angebote können einen anderen
+                  Mindestaufenthalt erfordern.
+                </p>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <img
+                src="assets/images/language_spoken.jpg"
+                alt="Sprachen"
+                class="info-icon"
+              />
+              <div class="info-content">
+                <h3>Gesprochene Sprachen im Hotel</h3>
+                <p>Das Personal im Resort ist mehrsprachig.</p>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <img
+                src="assets/images/first_aid.jpg"
+                alt="Ärztliche Versorgung"
+                class="info-icon"
+              />
+              <div class="info-content">
+                <h3>Ärztliche Versorgung</h3>
+                <p>
+                  Der Resortarzt und die Krankenschwester sind täglich 24
+                  Stunden in Bereitschaft. Konsultation, Untersuchung und
+                  grundlegende Medikamente werden kostenlos angeboten. Kosten
+                  für weiterführende medizinische Leistungen trägt der Gast.
+                </p>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <img
+                src="assets/images/island_time.jpg"
+                alt="Uhrzeit"
+                class="info-icon"
+              />
+              <div class="info-content">
+                <h3>Uhrzeit</h3>
+                <p>
+                  Auf Velassaru gilt die gleiche Zeit wie auf Malé (MEZ +4 und
+                  MESZ +3).
+                </p>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <img
+                src="assets/images/waterplane.jpg"
+                alt="Transfer"
+                class="info-icon"
+              />
+              <div class="info-content">
+                <h3>Transfer</h3>
+                <p>
+                  Der Transfer zur Insel wird mit dem Schnellboot angeboten.
+                  <br />
+                  <br />
+                  Entfernung Velana Int. Airport 35 km <br />
+                  Fahrtzeit: ca. 45 Minuten <br />
+                  <br />
+                  Ausführliche Informationen erhalten Sie mit Ihrer Buchung bzw.
+                  Ihrer Beratung.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq-section">
+        <div class="container">
+          <h2>Häufig gestellte Fragen (FAQ)</h2>
+
+          <div class="accordion">
+            <div class="accordion-item">
+              <button class="accordion-btn">
+                <span class="accordion-title"
+                  >1. Wann ist die beste Reisezeit für die Malediven?</span
+                >
+                <span class="icon" aria-hidden="true"></span>
+              </button>
+              <div class="accordion-content">
+                <p>
+                  Je nach Lage Ihres Resorts erfolgt der Transfer per
+                  Schnellboot, Wasserflugzeug oder Inlandsflug in Kombination
+                  mit dem Schnellboot. In der Regel organisiert das Hotel den
+                  Transfer, dieser ist jedoch nicht immer im Preis inbegriffen.
+                  Es ist wichtig, vorab zu klären, ob der Transfer gebucht wurde
+                  – insbesondere bei Online-Buchungen. Ohne vorherige
+                  Organisation ist ein spontaner Transfer selten möglich, da es
+                  keine regulären Fahrpläne wie bei den Fähren gibt. Wir raten
+                  davon ab, sich den Transfer selbst zu organisieren. Bei Meine
+                  Malediven bieten wir Ihnen den Aufenthalt immer mit einem
+                  passenden Transfer an. Achtung: Vergleichen Sie Preise immer
+                  inkl. Transfer und inkl. der 12 USD GT (Green Tax) pro Person
+                  (über 2 Jahre) und Nacht für die Green-Tax (Umweltsteuer), die
+                  üblicherweise vor Ort bezahlt werden muss, bei Meine Malediven
+                  aber bereits in Ihrem Aufenthaltspreis enthalten ist.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-btn">
+                <span class="accordion-title"
+                  >2. Benötige ich ein Visum für die Einreise auf die
+                  Malediven?</span
+                >
+                <span class="icon" aria-hidden="true"></span>
+              </button>
+              <div class="accordion-content">
+                <p>
+                  Je nach Lage Ihres Resorts erfolgt der Transfer per
+                  Schnellboot, Wasserflugzeug oder Inlandsflug in Kombination
+                  mit dem Schnellboot. In der Regel organisiert das Hotel den
+                  Transfer, dieser ist jedoch nicht immer im Preis inbegriffen.
+                  Es ist wichtig, vorab zu klären, ob der Transfer gebucht wurde
+                  – insbesondere bei Online-Buchungen. Ohne vorherige
+                  Organisation ist ein spontaner Transfer selten möglich, da es
+                  keine regulären Fahrpläne wie bei den Fähren gibt. Wir raten
+                  davon ab, sich den Transfer selbst zu organisieren. Bei Meine
+                  Malediven bieten wir Ihnen den Aufenthalt immer mit einem
+                  passenden Transfer an. Achtung: Vergleichen Sie Preise immer
+                  inkl. Transfer und inkl. der 12 USD GT (Green Tax) pro Person
+                  (über 2 Jahre) und Nacht für die Green-Tax (Umweltsteuer), die
+                  üblicherweise vor Ort bezahlt werden muss, bei Meine Malediven
+                  aber bereits in Ihrem Aufenthaltspreis enthalten ist.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-btn">
+                <span class="accordion-title"
+                  >3. Wie erfolgt der Transfer vom Flughafen in Malé zu meinem
+                  Hotel?</span
+                >
+                <span class="icon" aria-hidden="true"></span>
+              </button>
+              <div class="accordion-content">
+                <p>
+                  Je nach Lage Ihres Resorts erfolgt der Transfer per
+                  Schnellboot, Wasserflugzeug oder Inlandsflug in Kombination
+                  mit dem Schnellboot. In der Regel organisiert das Hotel den
+                  Transfer, dieser ist jedoch nicht immer im Preis inbegriffen.
+                  Es ist wichtig, vorab zu klären, ob der Transfer gebucht wurde
+                  – insbesondere bei Online-Buchungen. Ohne vorherige
+                  Organisation ist ein spontaner Transfer selten möglich, da es
+                  keine regulären Fahrpläne wie bei den Fähren gibt. Wir raten
+                  davon ab, sich den Transfer selbst zu organisieren. Bei Meine
+                  Malediven bieten wir Ihnen den Aufenthalt immer mit einem
+                  passenden Transfer an. Achtung: Vergleichen Sie Preise immer
+                  inkl. Transfer und inkl. der 12 USD GT (Green Tax) pro Person
+                  (über 2 Jahre) und Nacht für die Green-Tax (Umweltsteuer), die
+                  üblicherweise vor Ort bezahlt werden muss, bei Meine Malediven
+                  aber bereits in Ihrem Aufenthaltspreis enthalten ist.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-btn">
+                <span class="accordion-title"
+                  >4. Wie unterscheiden sich Wasserflugzeug-, Inlandsflug- und
+                  Schnellboot-Transfers?</span
+                >
+                <span class="icon" aria-hidden="true"></span>
+              </button>
+              <div class="accordion-content">
+                <p>
+                  Je nach Lage Ihres Resorts erfolgt der Transfer per
+                  Schnellboot, Wasserflugzeug oder Inlandsflug in Kombination
+                  mit dem Schnellboot. In der Regel organisiert das Hotel den
+                  Transfer, dieser ist jedoch nicht immer im Preis inbegriffen.
+                  Es ist wichtig, vorab zu klären, ob der Transfer gebucht wurde
+                  – insbesondere bei Online-Buchungen. Ohne vorherige
+                  Organisation ist ein spontaner Transfer selten möglich, da es
+                  keine regulären Fahrpläne wie bei den Fähren gibt. Wir raten
+                  davon ab, sich den Transfer selbst zu organisieren. Bei Meine
+                  Malediven bieten wir Ihnen den Aufenthalt immer mit einem
+                  passenden Transfer an. Achtung: Vergleichen Sie Preise immer
+                  inkl. Transfer und inkl. der 12 USD GT (Green Tax) pro Person
+                  (über 2 Jahre) und Nacht für die Green-Tax (Umweltsteuer), die
+                  üblicherweise vor Ort bezahlt werden muss, bei Meine Malediven
+                  aber bereits in Ihrem Aufenthaltspreis enthalten ist.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-btn">
+                <span class="accordion-title"
+                  >5. Sind Impfungen für die Malediven erforderlich?</span
+                >
+                <span class="icon" aria-hidden="true"></span>
+              </button>
+              <div class="accordion-content">
+                <p>
+                  Je nach Lage Ihres Resorts erfolgt der Transfer per
+                  Schnellboot, Wasserflugzeug oder Inlandsflug in Kombination
+                  mit dem Schnellboot. In der Regel organisiert das Hotel den
+                  Transfer, dieser ist jedoch nicht immer im Preis inbegriffen.
+                  Es ist wichtig, vorab zu klären, ob der Transfer gebucht wurde
+                  – insbesondere bei Online-Buchungen. Ohne vorherige
+                  Organisation ist ein spontaner Transfer selten möglich, da es
+                  keine regulären Fahrpläne wie bei den Fähren gibt. Wir raten
+                  davon ab, sich den Transfer selbst zu organisieren. Bei Meine
+                  Malediven bieten wir Ihnen den Aufenthalt immer mit einem
+                  passenden Transfer an. Achtung: Vergleichen Sie Preise immer
+                  inkl. Transfer und inkl. der 12 USD GT (Green Tax) pro Person
+                  (über 2 Jahre) und Nacht für die Green-Tax (Umweltsteuer), die
+                  üblicherweise vor Ort bezahlt werden muss, bei Meine Malediven
+                  aber bereits in Ihrem Aufenthaltspreis enthalten ist.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-btn">
+                <span class="accordion-title"
+                  >6. Kann ich die Resorts auch ohne Transfer buchen?</span
+                >
+                <span class="icon" aria-hidden="true"></span>
+              </button>
+              <div class="accordion-content">
+                <p>
+                  Je nach Lage Ihres Resorts erfolgt der Transfer per
+                  Schnellboot, Wasserflugzeug oder Inlandsflug in Kombination
+                  mit dem Schnellboot. In der Regel organisiert das Hotel den
+                  Transfer, dieser ist jedoch nicht immer im Preis inbegriffen.
+                  Es ist wichtig, vorab zu klären, ob der Transfer gebucht wurde
+                  – insbesondere bei Online-Buchungen. Ohne vorherige
+                  Organisation ist ein spontaner Transfer selten möglich, da es
+                  keine regulären Fahrpläne wie bei den Fähren gibt. Wir raten
+                  davon ab, sich den Transfer selbst zu organisieren. Bei Meine
+                  Malediven bieten wir Ihnen den Aufenthalt immer mit einem
+                  passenden Transfer an. Achtung: Vergleichen Sie Preise immer
+                  inkl. Transfer und inkl. der 12 USD GT (Green Tax) pro Person
+                  (über 2 Jahre) und Nacht für die Green-Tax (Umweltsteuer), die
+                  üblicherweise vor Ort bezahlt werden muss, bei Meine Malediven
+                  aber bereits in Ihrem Aufenthaltspreis enthalten ist.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-btn">
+                <span class="accordion-title"
+                  >7. Welche Sprachen werden in den Resorts gesprochen?</span
+                >
+                <span class="icon" aria-hidden="true"></span>
+              </button>
+              <div class="accordion-content">
+                <p>
+                  Je nach Lage Ihres Resorts erfolgt der Transfer per
+                  Schnellboot, Wasserflugzeug oder Inlandsflug in Kombination
+                  mit dem Schnellboot. In der Regel organisiert das Hotel den
+                  Transfer, dieser ist jedoch nicht immer im Preis inbegriffen.
+                  Es ist wichtig, vorab zu klären, ob der Transfer gebucht wurde
+                  – insbesondere bei Online-Buchungen. Ohne vorherige
+                  Organisation ist ein spontaner Transfer selten möglich, da es
+                  keine regulären Fahrpläne wie bei den Fähren gibt. Wir raten
+                  davon ab, sich den Transfer selbst zu organisieren. Bei Meine
+                  Malediven bieten wir Ihnen den Aufenthalt immer mit einem
+                  passenden Transfer an. Achtung: Vergleichen Sie Preise immer
+                  inkl. Transfer und inkl. der 12 USD GT (Green Tax) pro Person
+                  (über 2 Jahre) und Nacht für die Green-Tax (Umweltsteuer), die
+                  üblicherweise vor Ort bezahlt werden muss, bei Meine Malediven
+                  aber bereits in Ihrem Aufenthaltspreis enthalten ist.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-btn">
+                <span class="accordion-title"
+                  >8. Gibt es ärztliche Versorgung auf den Inseln?</span
+                >
+                <span class="icon" aria-hidden="true"></span>
+              </button>
+              <div class="accordion-content">
+                <p>
+                  Je nach Lage Ihres Resorts erfolgt der Transfer per
+                  Schnellboot, Wasserflugzeug oder Inlandsflug in Kombination
+                  mit dem Schnellboot. In der Regel organisiert das Hotel den
+                  Transfer, dieser ist jedoch nicht immer im Preis inbegriffen.
+                  Es ist wichtig, vorab zu klären, ob der Transfer gebucht wurde
+                  – insbesondere bei Online-Buchungen. Ohne vorherige
+                  Organisation ist ein spontaner Transfer selten möglich, da es
+                  keine regulären Fahrpläne wie bei den Fähren gibt. Wir raten
+                  davon ab, sich den Transfer selbst zu organisieren. Bei Meine
+                  Malediven bieten wir Ihnen den Aufenthalt immer mit einem
+                  passenden Transfer an. Achtung: Vergleichen Sie Preise immer
+                  inkl. Transfer und inkl. der 12 USD GT (Green Tax) pro Person
+                  (über 2 Jahre) und Nacht für die Green-Tax (Umweltsteuer), die
+                  üblicherweise vor Ort bezahlt werden muss, bei Meine Malediven
+                  aber bereits in Ihrem Aufenthaltspreis enthalten ist.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-btn">
+                <span class="accordion-title"
+                  >9. Welche Stromspannung und Steckdosen gibt es auf den
+                  Malediven?</span
+                >
+                <span class="icon" aria-hidden="true"></span>
+              </button>
+              <div class="accordion-content">
+                <p>
+                  Je nach Lage Ihres Resorts erfolgt der Transfer per
+                  Schnellboot, Wasserflugzeug oder Inlandsflug in Kombination
+                  mit dem Schnellboot. In der Regel organisiert das Hotel den
+                  Transfer, dieser ist jedoch nicht immer im Preis inbegriffen.
+                  Es ist wichtig, vorab zu klären, ob der Transfer gebucht wurde
+                  – insbesondere bei Online-Buchungen. Ohne vorherige
+                  Organisation ist ein spontaner Transfer selten möglich, da es
+                  keine regulären Fahrpläne wie bei den Fähren gibt. Wir raten
+                  davon ab, sich den Transfer selbst zu organisieren. Bei Meine
+                  Malediven bieten wir Ihnen den Aufenthalt immer mit einem
+                  passenden Transfer an. Achtung: Vergleichen Sie Preise immer
+                  inkl. Transfer und inkl. der 12 USD GT (Green Tax) pro Person
+                  (über 2 Jahre) und Nacht für die Green-Tax (Umweltsteuer), die
+                  üblicherweise vor Ort bezahlt werden muss, bei Meine Malediven
+                  aber bereits in Ihrem Aufenthaltspreis enthalten ist.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-btn">
+                <span class="accordion-title"
+                  >10. Wie läuft die Bezahlung in den Resorts ab?</span
+                >
+                <span class="icon" aria-hidden="true"></span>
+              </button>
+              <div class="accordion-content">
+                <p>
+                  Je nach Lage Ihres Resorts erfolgt der Transfer per
+                  Schnellboot, Wasserflugzeug oder Inlandsflug in Kombination
+                  mit dem Schnellboot. In der Regel organisiert das Hotel den
+                  Transfer, dieser ist jedoch nicht immer im Preis inbegriffen.
+                  Es ist wichtig, vorab zu klären, ob der Transfer gebucht wurde
+                  – insbesondere bei Online-Buchungen. Ohne vorherige
+                  Organisation ist ein spontaner Transfer selten möglich, da es
+                  keine regulären Fahrpläne wie bei den Fähren gibt. Wir raten
+                  davon ab, sich den Transfer selbst zu organisieren. Bei Meine
+                  Malediven bieten wir Ihnen den Aufenthalt immer mit einem
+                  passenden Transfer an. Achtung: Vergleichen Sie Preise immer
+                  inkl. Transfer und inkl. der 12 USD GT (Green Tax) pro Person
+                  (über 2 Jahre) und Nacht für die Green-Tax (Umweltsteuer), die
+                  üblicherweise vor Ort bezahlt werden muss, bei Meine Malediven
+                  aber bereits in Ihrem Aufenthaltspreis enthalten ist.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="modal-content" style="display: none">
+      <div class="modal_container">
+        <div class="left-column">
+          <div class="f-carousel" id="myCarousel">
+            <div
+              class="f-carousel__slide"
+              data-fancybox="gallery"
+              data-src="https://lipsum.app/id/68/1920x1080"
+              data-thumb-src="https://lipsum.app/id/68/1920x1080"
+            >
+              <img
+                data-lazy-src="https://lipsum.app/id/68/1920x1080"
+                alt="Image #1"
+              />
+            </div>
+            <div
+              class="f-carousel__slide"
+              data-fancybox="gallery"
+              data-src="https://lipsum.app/id/58/1920x1080"
+              data-thumb-src="https://lipsum.app/id/58/1920x1080"
+            >
+              <img
+                data-lazy-src="https://lipsum.app/id/58/1920x1080"
+                alt="Image #2"
+              />
+            </div>
+
+            <div
+              class="f-carousel__slide"
+              data-fancybox="gallery"
+              data-src="https://lipsum.app/id/3/1920x1080"
+              data-thumb-src="https://lipsum.app/id/3/1920x1080"
+            >
+              <img
+                data-lazy-src="https://lipsum.app/id/3/1920x1080"
+                alt="Image #3"
+              />
+            </div>
+            <div
+              class="f-carousel__slide"
+              data-fancybox="gallery"
+              data-src="https://lipsum.app/id/62/1920x1080"
+              data-thumb-src="https://lipsum.app/id/62/1920x1080"
+            >
+              <img
+                data-lazy-src="https://lipsum.app/id/62/1920x1080"
+                alt="Image #4"
+              />
+            </div>
+            <div
+              class="f-carousel__slide"
+              data-fancybox="gallery"
+              data-src="https://lipsum.app/id/58/1920x1080"
+              data-thumb-src="https://lipsum.app/id/58/1920x1080"
+            >
+              <img
+                data-lazy-src="https://lipsum.app/id/58/1920x1080"
+                alt="Image #2"
+              />
+            </div>
+            <div
+              class="f-carousel__slide"
+              data-fancybox="gallery"
+              data-src="https://lipsum.app/id/63/1920x1080"
+              data-thumb-src="https://lipsum.app/id/63/1920x1080"
+            >
+              <img
+                data-lazy-src="https://lipsum.app/id/63/1920x1080"
+                alt="Image #5"
+              />
+            </div>
+            <div
+              class="f-carousel__slide"
+              data-fancybox="gallery"
+              data-src="https://lipsum.app/id/63/1920x1080"
+              data-thumb-src="https://lipsum.app/id/63/1920x1080"
+            >
+              <img
+                data-lazy-src="https://lipsum.app/id/63/1920x1080"
+                alt="Image #5"
+              />
+            </div>
+            <div
+              class="f-carousel__slide"
+              data-fancybox="gallery"
+              data-src="https://lipsum.app/id/58/1920x1080"
+              data-thumb-src="https://lipsum.app/id/58/1920x1080"
+            >
+              <img
+                data-lazy-src="https://lipsum.app/id/58/1920x1080"
+                alt="Image #2"
+              />
+            </div>
+          </div>
+
+          <div class="room-details">
+            <div class="room-section">
+              <h3 class="section-title">Komfort</h3>
+              <ul class="section-list">
+                <li>Deckenventilator</li>
+                <li>Klimaanlage</li>
+              </ul>
+            </div>
+
+            <div class="room-section">
+              <h3 class="section-title">Leibliche Wohl</h3>
+              <ul class="section-list">
+                <li>Minibar ($)</li>
+                <li>Tee-/Kaffeezubereitung</li>
+              </ul>
+            </div>
+
+            <div class="room-section">
+              <h3 class="section-title">Aussenbereich</h3>
+              <ul class="section-list">
+                <li>Möbilierte Terrasse</li>
+                <li>Wäscheständer</li>
+              </ul>
+            </div>
+
+            <div class="room-section">
+              <h3 class="section-title">Zimmer</h3>
+              <ul class="section-list">
+                <li>Kingsize Bett</li>
+                <li>Schreibtisch</li>
+                <li>Tisch & Stühle</li>
+              </ul>
+            </div>
+
+            <div class="room-section">
+              <h3 class="section-title">Bad</h3>
+              <ul class="section-list">
+                <li>Annehmlichkeiten für das Badezimmer</li>
+                <li>Dusche</li>
+                <li>Haartrockner</li>
+                <li>Hygieneartikel</li>
+              </ul>
+            </div>
+
+            <div class="room-section">
+              <h3 class="section-title">Technik</h3>
+              <ul class="section-list">
+                <li>Kostenfreie WiFi-Verbindung</li>
+                <li>Satellitenfernsehen</li>
+                <li>Direktwahltelefon ($)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="right-column-modal">
+          <h1>Standard Zimmer</h1>
+          <p class="max_occupancy">
+            Max. 2 Erwachsene + 2 Kinder oder 3 Erwachsene
+          </p>
+          <p>
+            Die Standardzimmer liegen verteilt auf der gesamten Insel. Jedes der
+            Häuser verfügt über vier Zimmer und haben einen ungehinderten Blick
+            auf die grünen Gärten oder den ruhigen Ozean.
+          </p>
+          <p>
+            Die unteren Zimmer sind ausgestattet mit Terrassen (ca. Sonnendeck
+            14 m²) und im oberen Stockwerk mit Balkonen.
+          </p>
+          <p>
+            Die Dreibettzimmer haben die gleiche Größe wie Doppelzimmer (nur ein
+            Klappbett / Rollbett (3. Bett) kann im Zimmer aufgestellt werden).
+          </p>
+          <p>
+            Beispiel: Für 2 Erwachsene + 2 Kinder wird nur ein
+            Klappbett/Rollbett im Zimmer bereitgestellt. Das andere Kind muss
+            sich das Bett mit den Eltern teilen.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer_box">
+      <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-left">
+            <img
+              src="assets/images/mm-logo-white.png"
+              alt="Logo"
+              class="footer-logo"
+            />
+            <p class="footer-text">
+              Meine Malediven ist eine Marke der BlueFields GmbH © 2004 - 2026
+            </p>
+            <div class="footer-images">
+              <img src="assets/images/visa.svg" alt="Zahlung mit Visa" />
+              <img
+                src="assets/images/mastercard-cc.svg"
+                alt="Zahlung mit Mastercard"
+              />
+              <img
+                src="assets/images/rechnung_logo.svg"
+                alt="Zahlung auf Rechnung"
+              />
+            </div>
+          </div>
+
+          <div class="footer-right">
+            <div class="footer-links-top">
+              <div class="footer-col">
+                <a href="/hotel-uebersicht">Hotels der Malediven</a>
+                <a href="/reisefuehrer">Reiseführer Malediven</a>
+                <a href="/atolle">Die Atolle der Malediven</a>
+                <a href="/nautilus-magazin">Nautilus Magazin</a>
+              </div>
+              <div class="footer-col">
+                <a href="/faq.html">FAQ / Hilfe</a>
+                <a href="/news">Malediven-News</a>
+              </div>
+              <div class="footer-col">
+                <a href="/repeater">Wiederkehrende Gäste</a>
+                <a href="/honeymooner">Honeymooner</a>
+                <a href="/geburtstag">Dein Geburtstag</a>
+                <a href="/gruppenreisen">Reisen in der Gruppe</a>
+              </div>
+            </div>
+
+            <div class="footer-links-bottom">
+              <a href="/kontakt.html">Kontakt</a>
+              <a href="/impressum.html">Impressum</a>
+              <a href="/datenschutz">Datenschutz</a>
+              <a href="/agb.html">AGB</a>
+              <a href="/entgelttabelle">Entgelttabelle</a>
+              <a href="ueber_uns.html">Über uns</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="module" src="fecha-4.2.1/lib/fecha.js"></script>
+    <script src="fecha-4.2.1/dist/fecha.min.js"></script>
+    <script src="hotel-datepicker-main/dist/js/hotel-datepicker.min.js"></script>
+    <script src="js/fancybox.umd.js"></script>
+    <script src="js/carousel.umd.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.0/dist/carousel/carousel.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.0/dist/carousel/carousel.arrows.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.0/dist/carousel/carousel.lazyload.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.0/dist/carousel/carousel.thumbs.umd.js"></script> -->
+
+    <script src="js/fancybox.js"></script>
+    <script src="js/carousel.umd.js"></script>
+    <script src="js/carousel.sync.umd.js"></script>
+    <script src="js/carousel.sync.js"></script>
+    <script src="js/tabby.js"></script>
+    <script src="js/tabby.polyfills.js"></script>
+    <script src="js/tabby.min.js"></script>
+    <script src="js/tabby.polyfills.min.js"></script>
+
+    <script src="js/script.js"></script>
+    <!-- <script>
+      const tabs = new Tabby("[data-tabs]");
+    </script>
+    <script>
+      const accordions = document.querySelectorAll(".accordion-item");
+
+      accordions.forEach((item) => {
+        const btn = item.querySelector(".accordion-btn");
+        const content = item.querySelector(".accordion-content");
+        const icon = item.querySelector(".icon");
+
+        btn.addEventListener("click", () => {
+        
+          accordions.forEach((other) => {
+            if (other !== item) {
+              other.querySelector(".accordion-btn").classList.remove("active");
+              other.querySelector(".accordion-content").style.maxHeight = null;
+              other.querySelector(".accordion-content").style.opacity = "0";
+              other.querySelector(".icon").classList.remove("open");
+            }
+          });
+
+       
+          btn.classList.toggle("active");
+          const isOpen = btn.classList.contains("active");
+
+          if (isOpen) {
+            content.style.maxHeight = content.scrollHeight + "px";
+            content.style.opacity = "1";
+            icon.classList.add("open");
+          } else {
+            content.style.maxHeight = null;
+            content.style.opacity = "0";
+            icon.classList.remove("open");
+          }
+        });
+      });
+    </script>
+    <script>
+      
+
+      Fancybox.bind("[data-fancybox]", {
+        on: {
+          init: () => {
+           
+            if (
+              !document
+                .getElementById("myCarousel")
+                .classList.contains("f-carousel-initialized")
+            ) {
+              Carousel(
+                document.getElementById("myCarousel"),
+                {
+                  Thumbs: {
+                    type: "classic",
+                  },
+                },
+                {
+                  Lazyload,
+                  Arrows,
+                  Thumbs,
+                }
+              ).init();
+              document
+                .getElementById("myCarousel")
+                .classList.add("f-carousel-initialized");
+            }
+          },
+        },
+      });
+
+     
+      Fancybox.bind("[data-fancybox='gallery']", {
+       
+      });
+    </script> -->
+  </body>
+</html>

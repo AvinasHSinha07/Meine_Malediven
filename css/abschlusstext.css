@@ -1,0 +1,242 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans) !important;
+}
+
+.abschlusstext {
+  padding: 2.5rem 3rem;
+
+  color: #333;
+}
+
+.abschlusstext-container {
+  line-height: 1.75;
+}
+
+.abschlusstext_heading {
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: #0f386c;
+}
+
+.abschlusstext_subheading {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #0f386c;
+  margin-bottom: 2rem;
+}
+
+.abschlusstext_paragraph {
+  margin-bottom: 1.4rem;
+  font-size: 1rem;
+  color: #444;
+}
+
+.abschlusstext-highlight {
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  font-weight: 600;
+  color: #42b7c5;
+  margin-top: 2rem;
+  line-height: 1.6;
+}
+
+.Malediven {
+  color: #0c6ec8;
+}
+
+.heading_margin {
+  margin-bottom: 1.5rem;
+}
+
+/* ------------------ RESPONSIVENESS ------------------ */
+
+/* Extra Small Devices (<=480px) */
+@media (max-width: 480px) {
+  .abschlusstext {
+    padding: 2rem 1rem;
+  }
+  .abschlusstext_heading {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+  }
+  .abschlusstext_subheading {
+    font-size: 1rem;
+    margin: 1rem 0 0.6rem;
+  }
+  .abschlusstext_paragraph {
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+  }
+  .abschlusstext-highlight {
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+}
+
+/* Small Devices (481px - 640px) */
+@media (min-width: 481px) and (max-width: 640px) {
+  .abschlusstext {
+    padding: 2rem 1.2rem;
+  }
+  .abschlusstext_heading {
+    font-size: 1.5rem;
+  }
+  .abschlusstext_subheading {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+  .abschlusstext_paragraph {
+    font-size: 0.95rem;
+  }
+  .abschlusstext-highlight {
+    font-size: 1.05rem;
+  }
+}
+
+/* Medium Devices (641px - 768px) */
+@media (min-width: 641px) and (max-width: 768px) {
+  .abschlusstext {
+    padding: 2.5rem 2rem;
+  }
+  .abschlusstext_heading {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+  .abschlusstext_subheading {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  .abschlusstext_paragraph {
+    font-size: 1rem;
+  }
+  .abschlusstext-highlight {
+    font-size: 1.1rem;
+  }
+}
+
+/* Large Tablets / Small Laptops (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .abschlusstext {
+    padding: 2.5rem 3rem;
+  }
+  .abschlusstext_heading {
+    font-size: 1.8rem;
+  }
+  .abschlusstext_subheading {
+    font-size: 1.3rem;
+  }
+  .abschlusstext_paragraph {
+    font-size: 1rem;
+  }
+  .abschlusstext-highlight {
+    font-size: 1.2rem;
+  }
+}
+
+/* Desktops (1025px - 1280px) */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .abschlusstext {
+    padding: 3rem 2.5rem;
+  }
+  .abschlusstext_heading {
+    font-size: 2rem;
+  }
+  .abschlusstext_subheading {
+    font-size: 1.4rem;
+  }
+  .abschlusstext_paragraph {
+    font-size: 1.05rem;
+  }
+  .abschlusstext-highlight {
+    font-size: 1.25rem;
+  }
+}
+
+/* Large Desktops (1281px - 1535px) */
+@media (min-width: 1281px) and (max-width: 1535px) {
+  .abschlusstext {
+    padding: 3.5rem 3rem;
+  }
+  .abschlusstext_heading {
+    font-size: 2.4rem;
+  }
+  .abschlusstext_subheading {
+    font-size: 1.6rem;
+  }
+  .abschlusstext_paragraph {
+    font-size: 1.1rem;
+  }
+  .abschlusstext-highlight {
+    font-size: 1.35rem;
+  }
+}
+
+/* Extra Large Desktops (>=1536px) */
+@media (min-width: 1536px) and (max-width: 2200px){
+  .abschlusstext_heading {
+    font-size: 3.5rem;
+  }
+  .abschlusstext_subheading {
+    font-size: 2rem;
+  }
+     .abschlusstext_paragraph {
+        color: #585858;
+        font-weight: 300;
+        margin-bottom: 4rem;
+        font-size: 1.5rem;
+    }
+     .abschlusstext-highlight {
+    font-size: 1.5rem;
+  }
+}
+ 
+
+
+@media (min-width: 2200px)  {
+  .abschlusstext{
+      max-width: 2080px;
+    margin: 0 auto;
+        padding: 2.5rem 2rem;
+  }
+  .abschlusstext_heading {
+    font-size: 4rem;
+  }
+  .abschlusstext_subheading{
+    font-size: 2.8rem;
+    font-weight: 300;
+    line-height: 3rem;
+  }
+  .abschlusstext_paragraph {
+        color: #333333;
+        font-weight: 300;
+        margin-bottom: 4rem;
+        font-size: 2rem;
+        line-height: 3rem;
+    }
+}
+
+
+/* 
+@media (min-width: 2800px) and (max-width: 5200px) {
+  .abschlusstext{
+    padding: 2.5rem 25rem;
+  }
+  .abschlusstext_heading {
+    font-size: 4rem;
+  }
+  .abschlusstext_subheading{
+    font-size: 2.8rem;
+    font-weight: 300;
+    line-height: 3rem;
+  }
+  .abschlusstext_paragraph {
+        color: #333333;
+        font-weight: 300;
+        margin-bottom: 4rem;
+        font-size: 2rem;
+        line-height: 3rem;
+    }
+} */

@@ -1,0 +1,6 @@
+<svg width="512" height="256" viewBox="0 0 512 256" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="512" height="256" fill="#fff" stroke="#1160b7" stroke-width="10"/>
+  <text x="50%" y="56%" text-anchor="middle" fill="#1160b7" font-family="Arial, Montserrat, Poppins, sans-serif" font-size="90" font-weight="bold" alignment-baseline="middle" dominant-baseline="middle">
+    Rechnung
+  </text>
+</svg>

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontakt</title>
+
+    <link
+      rel="stylesheet"
+      href="hotel-datepicker-main/dist/css/hotel-datepicker.css"
+    />
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/kontakt.css" />
+  </head>
+  <body>
+    <header>
+      <div class="top-header">
+        <button class="btn">
+          Beratungstermin buchen
+          <img src="assets/images/right-chevron.png" alt="" class="btn-icon" />
+        </button>
+      </div>
+
+      <div class="bottom-header-container">
+        <div class="bottom-header">
+          <div class="logo-container">
+            <img
+              src="./assets/images/logo_meine_malediven.svg"
+              alt="Logo"
+              class="logo"
+            />
+          </div>
+
+          <div class="nav-items-container">
+            <nav class="nav-items">
+              <button class="hamburger" id="hamburger">☰</button>
+
+              <div class="mobile-menu" id="mobile-menu">
+                <ul class="nav-list">
+                  <li><a href="/">Startseite</a></li>
+                  <li><a href="/hotel_page.html">Hotels</a></li>
+                  <li><a href="/angebote">Angebote</a></li>
+                  <li><a href="/magazine_details.html">Nautilus Magazin</a></li>
+                  <!-- <li><a href="/nautilus-magazin">Nautilus Magazin</a></li> -->
+                </ul>
+
+                <div class="search-btn-container">
+                  <button class="search-iconli">
+                    <img
+                      class="search-icon"
+                      src="assets/images/glas_blue_001f41.png"
+                      alt="Suche"
+                    />
+                  </button>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="booking-layer-container">
+        <div class="booking-layer">
+          <div class="dropdown-container">
+            <div class="custom-dropdown" id="hotelDropdown">
+              <div class="selected">
+                <div class="hotel-autocomplete-wrapper">
+                  <input
+                    type="text"
+                    class="hotel-autocomplete-input"
+                    placeholder="Sagen Sie uns welches Hotel Sie suchen..."
+                  />
+                  <ul class="hotel-autocomplete-list"></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="datepicker-container">
+            <button id="hotel-datepicker" class="datepicker-btn" type="button">
+              <div class="datepicker-text">
+                <div class="labels">
+                  <span>Anreisedatum</span>
+                  <span>Abreisedatum</span>
+                </div>
+                <div class="values">
+                  <span id="checkin-date" class="placeholder">--</span>
+                  <span>-</span>
+                  <span id="checkout-date" class="placeholder">--</span>
+                </div>
+              </div>
+              <img
+                src="assets/images/calendar-icon.png"
+                alt="Calendar"
+                class="calendar-icon"
+              />
+            </button>
+          </div>
+
+          <div class="nights-container">
+            <label for="points" class="nights-label">Nächte</label>
+            <input
+              type="number"
+              id="points"
+              name="points"
+              step="1"
+              min="1"
+              value="1"
+              class="nights-input"
+            />
+          </div>
+
+          <div class="dropdown-container2">
+            <div class="custom-dropdown2" id="travellersDropdown">
+              <span class="selected-text">
+                <span class="main-text">Reisende</span>
+              </span>
+              <span class="arrow">▼</span>
+            </div>
+
+            <div class="modal-overlay" id="modal">
+              <div class="modal">
+                <div class="row">
+                  <span class="label">Erwachsene</span>
+                  <div class="counter">
+                    <button onclick="changeCount('adults', -1)">-</button>
+                    <span id="adultsCount">2</span>
+                    <button onclick="changeCount('adults', 1)">+</button>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <span class="label">Kinder</span>
+                  <div class="counter">
+                    <button onclick="changeCount('children', -1)">-</button>
+                    <span id="childrenCount">0</span>
+                    <button onclick="changeCount('children', 1)">+</button>
+                  </div>
+                </div>
+
+                <div id="childrenAges" class="children-ages"></div>
+
+                <div class="row add-room">
+                  <span class="label link-label">Zimmer hinzufügen</span>
+                  <div class="counter">
+                    <button onclick="changeCount('rooms', -1)">-</button>
+                    <span id="roomsCount">1</span>
+                    <button onclick="changeCount('rooms', 1)">+</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="dropdown-container">
+            <div class="custom-dropdown nation" id="nationalityDropdown">
+              <div class="selected">
+                Land
+                <span class="arrow">▼</span>
+              </div>
+              <ul class="dropdown-list">
+                <li data-value="germany">
+                  <span class="country-name">Deutschland</span>
+                </li>
+                <li data-value="austria">
+                  <span class="country-name">Österreich</span>
+                </li>
+                <li data-value="switzerland">
+                  <span class="country-name">Schweiz</span>
+                </li>
+                <li data-value="switzerland">
+                  <span class="country-name">andere</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="booking-btn-container">
+            <button class="booking-btn" type="button">Jetzt buchen</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="breadcrumbs">
+        <p class="breadcrumbs_text">
+          <a href="/" class="breadcrumb_link">Startseite</a>
+          <!-- <span class="breadcrumb_separator">›</span>
+          <a href="/resort-uebersicht" class="breadcrumb_link"
+            >Resort Übersicht</a
+          > -->
+          <span class="breadcrumb_separator">›</span>
+          <span class="breadcrumb_current">Kontakt</span>
+        </p>
+      </section>
+
+      <section class="kontakt_intro_container">
+        <div class="kontakt_heading">
+          <h1 class="kontakt_title">Kontakt</h1>
+
+          <p class="kontakt_description">
+            Haben Sie Fragen oder benötigen Sie Informationen so nutzen Sie
+            bitte unser
+            <a class="kontaktformular_link" href="">Kontaktformular</a>.
+          </p>
+          <p class="kontakt_description">
+            Haben Sie Fragen oder benötigen weitere Informationen? Nutzen Sie
+            bitte unser Kontaktformular. Besuchen Sie auch unsere
+          </p>
+          <p class="kontakt_description">
+            FAQ-Seite, auf der wir viele Fragen von Nutzern und Kunden bereits
+            beantwortet haben.
+          </p>
+        </div>
+      </section>
+      <section class="kontakt_intro_container">
+        <div class="kontakt_heading">
+          <h1 class="kontakt_title">Öffnungszeiten</h1>
+
+          <p class="kontakt_description">
+            Montag bis Donnerstag von 9 - 18 Uhr
+          </p>
+          <p class="kontakt_description">Freitag von 9 bis 14:00 Uhr</p>
+          <p class="kontakt_description">
+            Unser Büro ist samstags und sonntags, sowie an folgenden Feiertagen
+            geschlossen
+          </p>
+        </div>
+      </section>
+
+      <section class="holiday-section">
+        <h2>Unser Büro ist an folgenden Feiertagen 2026 geschlossen</h2>
+        <div class="holiday-table">
+          <div class="table-header">
+            <div>Datum</div>
+            <div>Feiertag</div>
+          </div>
+
+          <div class="table-row">
+            <div>01. Januar 2026</div>
+            <div>Neujahr</div>
+          </div>
+          <div class="table-row">
+            <div>03. April 2026</div>
+            <div>Karfreitag</div>
+          </div>
+          <div class="table-row">
+            <div>06. April 2026</div>
+            <div>Ostermontag</div>
+          </div>
+          <div class="table-row">
+            <div>01. Mai 2026</div>
+            <div>Tag der Arbeit</div>
+          </div>
+          <div class="table-row">
+            <div>14. Mai 2026</div>
+            <div>Christi Himmelfahrt</div>
+          </div>
+          <div class="table-row">
+            <div>25. Mai 2026</div>
+            <div>Pfingstmontag</div>
+          </div>
+          <div class="table-row">
+            <div>03. Oktober 2026</div>
+            <div>Tag der Deutschen Einheit</div>
+          </div>
+          <div class="table-row">
+            <div>31. Oktober 2026</div>
+            <div>Reformationstag</div>
+          </div>
+          <div class="table-row">
+            <div>19. November 2026</div>
+            <div>Buß- und Bettag</div>
+          </div>
+        </div>
+      </section>
+      <section class="holiday-section">
+        <h2>Unsere Öffnungszeiten über Weihnachten und Neujahr</h2>
+        <div class="holiday-table">
+          <div class="table-header">
+            <div>Datum</div>
+            <div>Öffnungszeiten</div>
+          </div>
+
+          <div class="table-row">
+            <div>23. Dezember 2025</div>
+            <div>9 - 14 Uhr</div>
+          </div>
+          <div class="table-row">
+            <div>24. Dezember 2025 bis 02. Januar 2026</div>
+            <div>geschlossen</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="footer_box">
+      <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-left">
+            <img
+              src="assets/images/mm-logo-white.png"
+              alt="Logo"
+              class="footer-logo"
+            />
+            <p class="footer-text">
+              Meine Malediven ist eine Marke der BlueFields GmbH © 2004 - 2026
+            </p>
+            <div class="footer-images">
+              <img src="assets/images/visa.svg" alt="Zahlung mit Visa" />
+              <img
+                src="assets/images/mastercard-cc.svg"
+                alt="Zahlung mit Mastercard"
+              />
+              <img
+                src="assets/images/rechnung_logo.svg"
+                alt="Zahlung auf Rechnung"
+              />
+            </div>
+          </div>
+
+          <div class="footer-right">
+            <div class="footer-links-top">
+              <div class="footer-col">
+                <a href="/hotel-uebersicht">Hotels der Malediven</a>
+                <a href="/reisefuehrer">Reiseführer Malediven</a>
+                <a href="/atolle">Die Atolle der Malediven</a>
+                <a href="/nautilus-magazin">Nautilus Magazin</a>
+              </div>
+              <div class="footer-col">
+                <a href="/faq.html">FAQ / Hilfe</a>
+                <a href="/news">Malediven-News</a>
+              </div>
+              <div class="footer-col">
+                <a href="/repeater">Wiederkehrende Gäste</a>
+                <a href="/honeymooner">Honeymooner</a>
+                <a href="/geburtstag">Dein Geburtstag</a>
+                <a href="/gruppenreisen">Reisen in der Gruppe</a>
+              </div>
+            </div>
+
+            <div class="footer-links-bottom">
+              <a href="/kontakt.html">Kontakt</a>
+              <a href="/impressum.html">Impressum</a>
+              <a href="/datenschutz">Datenschutz</a>
+              <a href="/agb.html">AGB</a>
+              <a href="/entgelttabelle">Entgelttabelle</a>
+              <a href="ueber_uns.html">Über uns</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="module" src="fecha-4.2.1/lib/fecha.js"></script>
+    <script src="fecha-4.2.1/dist/fecha.min.js"></script>
+    <script src="hotel-datepicker-main/dist/js/hotel-datepicker.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

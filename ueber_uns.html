@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Über uns · Meine Malediven</title>
+
+    <!-- SEO-Optimierung -->
+    <meta
+      name="description"
+      content="Erfahren Sie mehr über BlueFields – Ihr Experte für exklusive Malediven-Reisen."
+    />
+    <meta
+      name="keywords"
+      content="Über uns, BlueFields, Malediven, Reiseveranstalter, Team, Unternehmensprofil"
+    />
+
+    <!-- Open Graph für Social Media -->
+    <meta property="og:title" content="Über uns · Meine Malediven" />
+    <meta
+      property="og:description"
+      content="Erfahren Sie mehr über BlueFields – Ihr Experte für exklusive Malediven-Reisen."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://www.meine-malediven.com/ueber-uns"
+    />
+    <meta property="og:site_name" content="Meine Malediven" />
+    <meta
+      property="og:image"
+      content="https://www.meine-malediven.com/assets/images/og-image.jpg"
+    />
+
+    <!-- Article-Timestamps im ISO-Format (T ohne Leerzeichen, Zeitzone beachten) -->
+    <meta
+      property="article:published_time"
+      content="2025-09-30T14:15:26+02:00"
+    />
+    <meta
+      property="article:modified_time"
+      content="2025-09-30T14:15:26+02:00"
+    />
+
+    <!-- Canonical Link -->
+    <link rel="canonical" href="https://www.meine-malediven.com/ueber-uns" />
+    <link
+      rel="stylesheet"
+      href="hotel-datepicker-main/dist/css/hotel-datepicker.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/about.css" />
+  </head>
+  <body>
+   <header>
+      <div class="top-header">
+        <button class="btn">
+          Beratungstermin buchen
+          <img src="assets/images/right-chevron.png" alt="" class="btn-icon" />
+        </button>
+      </div>
+
+      <div class="bottom-header-container">
+        <div class="bottom-header">
+          <div class="logo-container">
+            <img
+              src="./assets/images/logo_meine_malediven.svg"
+              alt="Logo"
+              class="logo"
+            />
+          </div>
+
+          <div class="nav-items-container">
+            <nav class="nav-items">
+              <button class="hamburger" id="hamburger">☰</button>
+
+              <div class="mobile-menu" id="mobile-menu">
+                <ul class="nav-list">
+                  <li><a href="/">Startseite</a></li>
+                  <li><a href="/hotel_page.html">Hotels</a></li>
+                  <li><a href="/angebote">Angebote</a></li>
+                  <li><a href="/magazine_details.html">Nautilus Magazin</a></li>
+                  <!-- <li><a href="/nautilus-magazin">Nautilus Magazin</a></li> -->
+                </ul>
+
+                <div class="search-btn-container">
+                  <button class="search-iconli">
+                    <img
+                      class="search-icon"
+                      src="assets/images/glas_blue_001f41.png"
+                      alt="Suche"
+                    />
+                  </button>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="booking-layer-container">
+        <div class="booking-layer">
+          <div class="dropdown-container">
+            <div class="custom-dropdown" id="hotelDropdown">
+              <div class="selected">
+                <div class="hotel-autocomplete-wrapper">
+                  <input
+                    type="text"
+                    class="hotel-autocomplete-input"
+                    placeholder="Sagen Sie uns welches Hotel Sie suchen..."
+                  />
+                  <ul class="hotel-autocomplete-list"></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="datepicker-container">
+            <button id="hotel-datepicker" class="datepicker-btn" type="button">
+              <div class="datepicker-text">
+                <div class="labels">
+                  <span>Anreisedatum</span>
+                  <span>Abreisedatum</span>
+                </div>
+                <div class="values">
+                  <span id="checkin-date" class="placeholder">--</span>
+                  <span>-</span>
+                  <span id="checkout-date" class="placeholder">--</span>
+                </div>
+              </div>
+              <img
+                src="assets/images/calendar-icon.png"
+                alt="Calendar"
+                class="calendar-icon"
+              />
+            </button>
+          </div>
+
+          <div class="nights-container">
+            <label for="points" class="nights-label">Nächte</label>
+            <input
+              type="number"
+              id="points"
+              name="points"
+              step="1"
+              min="1"
+              value="1"
+              class="nights-input"
+            />
+          </div>
+
+          <div class="dropdown-container2">
+            <div class="custom-dropdown2" id="travellersDropdown">
+              <span class="selected-text">
+                <span class="main-text">Reisende</span>
+              </span>
+              <span class="arrow">▼</span>
+            </div>
+
+            <div class="modal-overlay" id="modal">
+              <div class="modal">
+                <div class="row">
+                  <span class="label">Erwachsene</span>
+                  <div class="counter">
+                    <button onclick="changeCount('adults', -1)">-</button>
+                    <span id="adultsCount">2</span>
+                    <button onclick="changeCount('adults', 1)">+</button>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <span class="label">Kinder</span>
+                  <div class="counter">
+                    <button onclick="changeCount('children', -1)">-</button>
+                    <span id="childrenCount">0</span>
+                    <button onclick="changeCount('children', 1)">+</button>
+                  </div>
+                </div>
+
+                <div id="childrenAges" class="children-ages"></div>
+
+                <div class="row add-room">
+                  <span class="label link-label">Zimmer hinzufügen</span>
+                  <div class="counter">
+                    <button onclick="changeCount('rooms', -1)">-</button>
+                    <span id="roomsCount">1</span>
+                    <button onclick="changeCount('rooms', 1)">+</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="dropdown-container">
+            <div class="custom-dropdown nation" id="nationalityDropdown">
+              <div class="selected">
+                Land
+                <span class="arrow">▼</span>
+              </div>
+              <ul class="dropdown-list">
+                <li data-value="germany">
+                  <span class="country-name">Deutschland</span>
+                </li>
+                <li data-value="austria">
+                  <span class="country-name">Österreich</span>
+                </li>
+                <li data-value="switzerland">
+                  <span class="country-name">Schweiz</span>
+                </li>
+                <li data-value="switzerland">
+                  <span class="country-name">andere</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="booking-btn-container">
+            <button class="booking-btn" type="button">Jetzt buchen</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="headings">
+        <div class="headings-container">
+          <h1 class="heading_title">BlueFields GmbH</h1>
+          <p class="heading_subtitle">
+            Ihr Partner für maßgeschneiderte Reiseerlebnisse
+          </p>
+
+          <p class="heading_descriptiton">
+            Die BlueFields GmbH hat sich seit ihrer Gründung im Jahr 2004 als
+            innovativer und vertrauenswürdiger Akteur in der Reisebranche
+            etabliert. Mit unserem Fokus auf Individualität, Qualität und
+            exzellenten Service gestalten wir einzigartige Urlaubserlebnisse für
+            anspruchsvolle Reisende. Unser engagiertes Team setzt alles daran,
+            Ihre Reiseträume wahr werden zu lassen, indem wir auf Ihre
+            persönlichen Wünsche und Bedürfnisse eingehen.
+          </p>
+        </div>
+      </section>
+
+      <section class="drop_cap_text">
+        <div class="container">
+          <div class="drop_cap_image">
+            <img
+              src="/assets/images/MM_Logovariante.png"
+              alt="Logo Meine Malediven"
+            />
+          </div>
+          <div class="drop_cap_content">
+            <h1 class="drop_text_title">Meine Malediven stellt sich vor</h1>
+            <p class="drop_text_descriptiton">
+              Unter dem Dach der <strong>BlueFields GmbH</strong> vereinen wir
+              zwei spezialisierte Marken, die jeweils auf bestimmte Zielgruppen
+              und Destinationen ausgerichtet sind. Diese Spezialisierung
+              ermöglicht es uns, tiefgreifende Expertise und maßgeschneiderte
+              Angebote in verschiedenen Reisebereichen zu bieten.
+            </p>
+
+            <p class="drop_text_descriptiton">
+              Eine dieser spezialisierten Marken ist
+              <strong>Meine Malediven</strong> – Ihr vertrauensvoller und
+              engagierter Reisespezialist für perfekte Urlaubserlebnisse auf den
+              Malediven. Seit 2012 verwandeln wir bei Meine Malediven
+              Urlaubsträume in Realität. Wir bieten maßgeschneiderte
+              Malediven-Urlaube für alle, die eine absolut einzigartige Kulisse
+              für ihre Interessen suchen.
+            </p>
+
+            <p class="drop_text_descriptiton drop_text_bottom">
+              Egal ob Taucher, die hier auf Walhaie oder Mantas treffen und die
+              faszinierende Unterwasserwelt erkunden möchten, oder
+              Flitterwöchler, die in einer traumhaften Umgebung mit hoher
+              Privatsphäre romantische Tage verbringen wollen – wir gestalten
+              Ihren individuellen Traumurlaub.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="block_quote">
+        <h1 class="block_quote_title">
+          Ein persönliches Wort unserer Geschäftsführerin
+        </h1>
+
+        <div class="quote_container">
+          <div class="quote_left">
+            <img
+              src="./assets/images/quote.svg"
+              alt="Quote Icon"
+              class="quote_icon"
+            />
+            <div class="quote_text">
+              <p>
+                bei BlueFields steht seit jeher der Mensch im Mittelpunkt. Unser
+                Ziel ist es, Ihnen nicht nur einen Urlaub zu verkaufen, sondern
+                ein maßgeschneidertes Erlebnis, das Ihre Erwartungen übertrifft.
+                „Travel with a personal touch“ – unser Slogan ist für mich nicht
+                nur ein Leitsatz, sondern ein Versprechen.
+              </p>
+              <p>
+                Jede Reise ist so individuell wie Sie selbst. Wir begleiten Sie
+                persönlich von der ersten Beratung bis zur Rückkehr, stets mit
+                dem Anspruch, Ihnen die schönsten Momente im Paradies zu
+                ermöglichen. In einer Welt, die immer schneller und
+                unpersönlicher wird, möchten wir ein Zeichen setzen. Wir glauben
+                daran, dass persönliche Beziehungen und individuelle Betreuung
+                den Unterschied machen. Mit Meine Malediven entscheiden Sie sich
+                für einen Partner, der Ihre Reise mit Herz und Hingabe
+                gestaltet.
+                <br /><br />
+                Ich danke Ihnen für Ihr Vertrauen und freue mich darauf,
+                gemeinsam mit Ihnen unvergessliche Erinnerungen zu schaffen.
+              </p>
+
+              <p class="quote_author">
+                <strong class="quote_author_name">Andrea Fitza</strong>,
+                BlueFields GmbH CEO
+              </p>
+            </div>
+          </div>
+
+          <div class="quote_right">
+            <img src="./assets/images/CEO_BF.png" alt="CEO BlueFields GmbH" />
+          </div>
+        </div>
+
+        <div class="headings-container block_quote_heading">
+          <h1 class="block_quote_title">
+            Neben individuell gestalteten Reisen sind wir auch Experten für
+            Gruppenreisen.
+          </h1>
+
+          <p class="heading_descriptiton">
+            Ob Sie mit Freunden, der Familie oder im Rahmen einer
+            Firmenveranstaltung reisen möchten – wir organisieren für Sie
+            unvergessliche Gruppenreisen, die perfekt auf die Interessen und
+            Bedürfnisse Ihrer Gruppe abgestimmt sind. Auf Wunsch mit
+            mehrsprachiger Reiseleitung, internationalen Flügen und Events vor
+            Ort. Unsere langjährige Erfahrung in der Planung und Durchführung
+            von Gruppenreisen ermöglicht es uns, einzigartige Erlebnisse für
+            alle Teilnehmer zu schaffen. Bitte sprechen Sie uns an.
+          </p>
+        </div>
+      </section>
+
+      <section class="pull_quote_text">
+        <div class="pull_left">
+          <p>
+            Spezialist für exklusive und zielgruppengerechte <br />
+            Malediven-Reisen
+          </p>
+          <p>Seit 2003 für Sie da: Erfahrung & Know-how</p>
+          <p>Persönlich. Individuell. Verlässlich.</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="pull_right">
+          <p class="pull_descriptiton">
+            Ob Traumurlaub, Flitterwochen oder Familienreise – wir kennen die
+            schönsten Resorts und Geheimtipps der Malediven.
+          </p>
+          <p class="pull_descriptiton">
+            Mit über 21 Jahren Erfahrung, fundiertem Wissen und echter
+            Leidenschaft beraten wir Sie individuell – damit Ihre Reise
+            unvergesslich wird.
+          </p>
+          <p class="pull_descriptiton">
+            Melden Sie sich jederzeit – wir sind persönlich für Sie erreichbar
+            und begleiten Sie von Anfang bis Ende!
+          </p>
+
+          <p></p>
+        </div>
+      </section>
+    </main>
+
+   
+    <div class="footer_box">
+      <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-left">
+            <img
+              src="assets/images/mm-logo-white.png"
+              alt="Logo"
+              class="footer-logo"
+            />
+            <p class="footer-text">
+              Meine Malediven ist eine Marke der BlueFields GmbH © 2004 - 2026
+            </p>
+            <div class="footer-images">
+              <img src="assets/images/visa.svg" alt="Zahlung mit Visa" />
+              <img
+                src="assets/images/mastercard-cc.svg"
+                alt="Zahlung mit Mastercard"
+              />
+              <img
+                src="assets/images/rechnung_logo.svg"
+                alt="Zahlung auf Rechnung"
+              />
+            </div>
+          </div>
+
+          <div class="footer-right">
+            <div class="footer-links-top">
+              <div class="footer-col">
+                <a href="/hotel-uebersicht">Hotels der Malediven</a>
+                <a href="/reisefuehrer">Reiseführer Malediven</a>
+                <a href="/atolle">Die Atolle der Malediven</a>
+                <a href="/nautilus-magazin">Nautilus Magazin</a>
+              </div>
+              <div class="footer-col">
+                <a href="/faq.html">FAQ / Hilfe</a>
+                <a href="/news">Malediven-News</a>
+              </div>
+              <div class="footer-col">
+                <a href="/repeater">Wiederkehrende Gäste</a>
+                <a href="/honeymooner">Honeymooner</a>
+                <a href="/geburtstag">Dein Geburtstag</a>
+                <a href="/gruppenreisen">Reisen in der Gruppe</a>
+              </div>
+            </div>
+
+            <div class="footer-links-bottom">
+              <a href="/kontakt.html">Kontakt</a>
+              <a href="/impressum.html">Impressum</a>
+              <a href="/datenschutz">Datenschutz</a>
+              <a href="/agb.html">AGB</a>
+              <a href="/entgelttabelle">Entgelttabelle</a>
+              <a href="ueber_uns.html">Über uns</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script type="module" src="fecha-4.2.1/lib/fecha.js"></script>
+    <script src="fecha-4.2.1/dist/fecha.min.js"></script>
+    <script src="hotel-datepicker-main/dist/js/hotel-datepicker.min.js"></script>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

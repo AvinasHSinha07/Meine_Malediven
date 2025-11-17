@@ -1,0 +1,293 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans) !important;
+}
+
+.breadcrumbs {
+  padding: 1rem 1rem;
+}
+
+.breadcrumbs_hotel_name {
+  color: orange;
+}
+
+.breadcrumbs_text {
+  font-size: 1.5rem;
+  color: #0f386c;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.breadcrumb_link {
+  color: #0f386c;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.breadcrumb_link:hover {
+  color: orange;
+  cursor: pointer;
+}
+
+.breadcrumb_separator {
+  color: #999;
+}
+
+.breadcrumb_current {
+  color: orange;
+  font-weight: 600;
+}
+
+.kontakt_intro_container {
+  padding: 2.5rem 1rem;
+}
+
+.kontakt_title {
+  color: #0f386e;
+  font-weight: 300 !important;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.kontakt_description {
+  color: #333333;
+  font-weight: 300;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  width: 90%;
+}
+
+.kontaktformular_link {
+  text-decoration: none;
+  color: #0f386e;
+}
+
+.holiday-section {
+  padding: 2.5rem 1rem;
+}
+
+.holiday-section h2 {
+  color: #0f386e;
+  font-weight: 300 !important;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.holiday-table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #dddddd;
+}
+
+.table-header,
+.table-row {
+  display: table-row;
+}
+
+.table-header div {
+  font-weight: bold;
+  /* background-color: #0f386c; */
+  /* color: #fff; */
+  color: #0f386e;
+  font-size: 1rem;
+}
+.table-row div {
+  /* font-weight: bold; */
+  /* background-color: #0f386c; */
+  /* color: #fff; */
+  color: #333333;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+.table-row div,
+.table-header div {
+  display: table-cell;
+  padding: 1.2rem 1rem;
+ 
+  text-align: left;
+}
+
+.table-row:nth-child(even) {
+  background-color: #f4f4f4;
+}
+.table-row:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+/* ------------------ RESPONSIVENESS ------------------ */
+
+/* Extra Small Devices (<=480px) */
+@media (max-width: 480px) {
+}
+
+/* Small Devices (481px - 640px) */
+@media (min-width: 481px) and (max-width: 640px) {
+}
+
+/* Medium Devices (641px - 768px) */
+@media (min-width: 641px) and (max-width: 768px) {
+  .breadcrumbs {
+    padding: 1rem 2rem;
+  }
+
+  .kontakt_intro_container {
+    padding: 2.5rem 2rem;
+  }
+  .kontakt_title {
+    font-size: 2.5rem;
+  }
+  .kontakt_description {
+    font-size: 1.5rem;
+  }
+
+  .holiday-section {
+    padding: 2.5rem 2rem;
+  }
+}
+
+/* Large Tablets / Small Laptops (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .breadcrumbs {
+    padding: 1rem 2rem;
+  }
+
+  .kontakt_intro_container {
+    padding: 2.5rem 2rem;
+  }
+
+  .kontakt_title {
+    font-size: 2.5rem;
+  }
+  .kontakt_description {
+    font-size: 1.5rem;
+  }
+
+  .holiday-section {
+    padding: 2.5rem 2rem;
+  }
+}
+
+/* Desktops (1025px - 1280px) */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .breadcrumbs {
+    padding: 1rem 2rem;
+  }
+
+  .kontakt_intro_container {
+    padding: 2.5rem 2rem;
+  }
+
+  .kontakt_title {
+    font-size: 2.5rem;
+  }
+  .kontakt_description {
+    font-size: 1.5rem;
+  }
+
+  .holiday-section {
+    padding: 2.5rem 2rem;
+  }
+}
+
+/* Large Desktops (1281px - 1535px) */
+@media (min-width: 1281px) and (max-width: 1535px) {
+  .breadcrumbs {
+    padding: 1rem 3rem;
+  }
+
+  .kontakt_intro_container {
+    padding: 2.5rem 3rem;
+  }
+
+  .kontakt_title {
+    font-size: 2.5rem;
+  }
+  .kontakt_description {
+    font-size: 1.5rem;
+  }
+  .holiday-section {
+    padding: 2.5rem 3rem;
+  }
+     .holiday-table {
+    /* display: table; */
+    width: 80%;
+  }
+}
+
+/* Extra Large Desktops (>=1536px) */
+@media (min-width: 1536px) and (max-width: 2200px) {
+  .breadcrumbs {
+    padding: 1rem 3rem;
+  }
+
+  .kontakt_intro_container {
+    padding: 2.5rem 3rem;
+  }
+
+  .kontakt_title {
+    font-size: 2.5rem;
+  }
+  .kontakt_description {
+    font-size: 1.5rem;
+  }
+  .holiday-section {
+    padding: 2.5rem 3rem;
+  }
+  .holiday-section h2 {
+    font-size: 2.5rem;
+  }
+   .holiday-table {
+    /* display: table; */
+    width: 70%;
+  }
+}
+
+@media (min-width: 2200px) {
+  .breadcrumbs {
+    max-width: 2080px;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+  }
+
+  .kontakt_intro_container {
+    padding: 2.5rem 2rem;
+    max-width: 2080px;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+  }
+
+  .kontakt_title {
+    font-size: 3rem;
+  }
+  .kontakt_description {
+    font-size: 2rem;
+  }
+  .holiday-section {
+    max-width: 2080px;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+    padding-bottom: 4rem;
+  }
+
+  .table-header div {
+    font-size: 1.5rem;
+  }
+  .table-row div {
+    font-size: 1rem;
+  }
+
+  .holiday-table {
+    /* display: table; */
+    width: 70%;
+  }
+
+  .holiday-section h2 {
+    font-size: 3rem;
+  }
+}
