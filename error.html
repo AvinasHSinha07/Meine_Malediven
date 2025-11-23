@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 Error Page</title>
+    <link rel="stylesheet" href="css/error.css" />
+  </head>
+
+  <body>
+    <section class="container">
+      <div class="left">
+        <img class="logo" src="assets/images/logo_meine_malediven.svg" alt="Logo" />
+      </div>
+
+      <div class="right-content">
+        <h1 class="error-title">Page not Found</h1>
+        <h1 class="error-code">404</h1>
+        
+        <p class="error-desc">
+          Die Seite, die Sie aufgerufen haben, konnte nicht gefunden werden!
+        </p>
+        <p class="error-desc">
+          Wir haben alles durchsucht aber egal was wir auch machten, wir können
+          die Seite die Sie aufgerufen haben nicht finden. Das kann
+          unterschiedliche Gründe haben.
+        </p>
+        
+        <hr class="divider">
+        
+        <p class="action-title">Das können Sie jetzt machen</p>
+        
+        <div class="btn-group">
+            <button onclick="location.reload()">Seite neu laden</button>
+            <button onclick="history.back()">Zurück zur vorherigen Seite</button>
+            <button onclick="window.location.href='/'">Zur Startseite</button>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

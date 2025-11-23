@@ -1,0 +1,265 @@
+:root {
+  --font-sans: "Nunito Sans", Arial, sans-serif;
+  --primary-blue: #0f386c;
+  --button-blue: #1a588e;
+  --accent-orange: orange;
+  --text-dark: #333333;
+  --left-bg: #175890;
+  --bg-light: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans) !important;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.left {
+  width: 20%;
+  background-color: var(--left-bg);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.logo {
+  max-width: 100%;
+  height: auto;
+}
+
+.right-content {
+  flex: 1;
+  background-color: var(--bg-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2.5rem 1rem;
+}
+
+.error-title {
+  color: #333333;
+  font-weight: 400;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.error-code {
+  color: #f47655;
+  font-weight: 600;
+  font-size: 4rem;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+}
+
+.error-desc {
+  color: #333333;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.divider {
+  border: 0;
+  height: 1px;
+  background: #dddddd;
+  margin: 2rem 0;
+  width: 100%;
+  max-width: 80%;
+}
+
+.action-title {
+  color: #333333;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+button {
+  padding: 1rem 1.5rem;
+  border: 1px solid #0f386c;
+  background: transparent;
+  color: #0f386c;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: 0.3s ease;
+  font-weight: 400;
+}
+
+button:hover {
+  background: #0f386c;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+  .left {
+    width: 100%;
+  }
+  .right-content {
+    padding: 2.5rem 1rem;
+  }
+  .btn-group {
+    flex-direction: column;
+  }
+  button {
+    width: 100%;
+  }
+  .logo {
+    max-width: 80%;
+    height: auto;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 640px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+  .left {
+    width: 100%;
+  }
+  .right-content {
+    padding: 2.5rem 1rem;
+  }
+  .logo {
+    max-width: 100% !important;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+  .left {
+    width: 100%;
+  }
+  .logo {
+    max-width: 100% !important;
+  }
+  .right-content {
+    padding: 2.5rem 2rem;
+  }
+  .error-title {
+    font-size: 2.5rem;
+  }
+  .error-desc {
+    font-size: 1.5rem;
+  }
+  .error-code {
+    font-size: 5rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    flex-direction: row;
+    height: 100vh;
+  }
+  .left {
+    width: 25%;
+  }
+  .logo {
+    max-width: 100%;
+  }
+  .right-content {
+    padding: 2.5rem 2rem;
+  }
+  .error-title {
+    font-size: 2.5rem;
+  }
+  .error-desc {
+    font-size: 1.5rem;
+  }
+  .error-code {
+    font-size: 5rem;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .right-content {
+    padding: 2.5rem 2rem;
+  }
+  .error-title {
+    font-size: 2.5rem;
+  }
+  .error-desc {
+    font-size: 1.5rem;
+  }
+  .error-code {
+    font-size: 5.5rem;
+  }
+}
+
+@media (min-width: 1281px) and (max-width: 1535px) {
+  .right-content {
+    padding: 2.5rem 3rem;
+  }
+  .error-title {
+    font-size: 2.5rem;
+  }
+  .error-desc {
+    font-size: 1.5rem;
+  }
+  .error-code {
+    font-size: 6rem;
+  }
+}
+
+@media (min-width: 1536px) and (max-width: 2200px) {
+  .right-content {
+    padding: 2.5rem 3rem;
+  }
+  .error-title {
+    font-size: 2.5rem;
+  }
+  .error-desc {
+    font-size: 1.5rem;
+  }
+  .error-code {
+    font-size: 6rem;
+  }
+}
+
+@media (min-width: 2200px) {
+  .right-content {
+    padding: 2rem 4rem;
+    max-width: 2080px;
+    margin-right: auto;
+    width: 100%;
+    padding-bottom: 4rem;
+  }
+  .error-title {
+    font-size: 3rem;
+  }
+  .error-desc {
+    font-size: 2rem;
+  }
+  .error-code {
+    font-size: 7rem;
+  }
+}
