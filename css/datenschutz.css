@@ -240,7 +240,7 @@
 
 .privacy-sub-title {
   color: #1a588e; /* Button Blue for subheaders */
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 500;
   margin-top: 2rem;
   margin-bottom: 1.5rem;
@@ -248,10 +248,11 @@
 
 .privacy-content p {
   color: #333;
-  font-size: 1.5rem;
+  font-size: 1rem;
   line-height: 1.7;
   margin-bottom: 0.5rem;
   font-weight: 300;
+  font-family: var(--font-sans);
 }
 
 .privacy-content a {
@@ -295,35 +296,24 @@
 
 /* Custom List Styling for Privacy Section */
 .privacy-list {
-  list-style: none; /* Remove default bullets */
+  list-style: inside disc; /* Remove default bullets */
   padding: 0;
   margin: 1rem 0 2rem 0;
 }
 
 .privacy-list li {
   position: relative;
-  padding-left: 1.5rem; /* Space for the bullet */
-  margin-bottom: 1rem;  /* Space between list items */
+
   
   /* Match existing paragraph typography */
-  color: #333;
-  font-size: 1.5rem;
+  color: #0f386e;
+  font-size: 1rem;
   font-weight: 300;
   line-height: 1.7;
+  list-style-type: inside disc;
 }
 
-/* Custom Bullet Point */
-.privacy-list li::before {
-  content: "•";       /* Bullet character */
-  color: #0f386c;     /* Your Primary Blue */
-  font-weight: bold;
-  font-size: 1.5rem;  /* Make bullet slightly larger */
-  
-  /* Positioning */
-  position: absolute;
-  left: 0;
-  top: -6px;          /* Adjusts vertical alignment to text */
-}
+
 
 /* -------------------------------------------------------------------------- */
 /* MEDIA QUERIES (Merged)                                                     */
@@ -359,7 +349,7 @@
     overflow-y: visible;
   }
   .privacy-nav ul {
-    display: flex;
+    /* display: flex; */
     flex-wrap: wrap;
     gap: 0.5rem;
     width: 100%;
@@ -367,7 +357,7 @@
   .nav-link {
     background-color: #f1f6fe;
     padding: 0.5rem 1rem;
-    font-size: 0.9rem;
+    font-size: 1rem;
     border-radius: 20px;
     border-left: none;
     white-space: normal;
@@ -463,7 +453,7 @@
     overflow-y: visible;
   }
   .privacy-nav ul {
-    display: flex;
+    /* display: flex; */
     flex-wrap: wrap;
     gap: 0.5rem;
     width: 100%;
@@ -471,7 +461,7 @@
   .nav-link {
     background-color: #f1f6fe;
     padding: 0.5rem 1rem;
-    font-size: 0.9rem;
+    font-size: 1rem;
     border-radius: 20px;
     border-left: none;
     white-space: normal;
@@ -508,7 +498,7 @@
     overflow-y: visible;
   }
   .privacy-nav ul {
-    display: flex;
+    /* display: flex; */
     flex-wrap: wrap;
     gap: 0.8rem;
     width: 100%;
@@ -516,7 +506,7 @@
   .nav-link {
     background-color: #f1f6fe;
     padding: 0.6rem 1.2rem;
-    font-size: 0.95rem;
+    font-size: 1rem;
     border-radius: 20px;
     border-left: none;
     white-space: normal;
@@ -525,6 +515,10 @@
     overflow-y: visible;
     padding: 0;
     padding-bottom: 2rem;
+  }
+
+  .privacy-main-title, .privacy-section-title{
+    font-size: 2rem;
   }
 }
 
@@ -557,6 +551,9 @@
   /* Privacy Section: Desktop Padding */
   .privacy-container {
     padding: 0 3rem;
+  }
+  .privacy-content p{
+    font-size: 1.5rem;
   }
 }
 
@@ -618,9 +615,15 @@
     font-size: 3rem;
   }
   .privacy-section-title {
-    font-size: 2.2rem;
+    font-size: 3rem;
   }
   .privacy-content p {
-    font-size: 1.2rem;
+    font-size: 2rem;
+  }
+  .privacy-sub-title {
+    font-size: 2.5rem;
+  }
+  .privacy-list li{
+    font-size: 2rem;
   }
 }

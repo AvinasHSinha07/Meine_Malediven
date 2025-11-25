@@ -242,25 +242,3 @@
   }
 }
 
-
-/* 
-@media (min-width: 2800px) and (max-width: 5200px) {
-  .reports{
-    padding: 5.5rem 25rem;
-  }
-  .reports_headline{
-      font-size: 4rem;
-  }
-  .reports-card-hashtag{
-    font-size: 1.5rem;
-  }
-  .reports-card-title{
-     font-size: 1.8rem;
-  }
-  .reports-card-content{
-    margin: -5rem 1rem 1rem 1rem;
-  }
-  .reports-card-summary{
-    font-size: 1.3rem;
-  }
-} */
