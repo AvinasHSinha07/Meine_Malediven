@@ -63,7 +63,11 @@
 
 .kontaktformular_link {
   text-decoration: none;
-  color: #0f386e;
+  color: #277aff;
+}
+.kontaktformular_link:hover {
+  text-decoration: none;
+  color: orange;
 }
 
 .holiday-section {
@@ -109,7 +113,7 @@
 .table-header div {
   display: table-cell;
   padding: 1.2rem 1rem;
- 
+
   text-align: left;
 }
 
@@ -214,7 +218,7 @@
   .holiday-section {
     padding: 2.5rem 3rem;
   }
-     .holiday-table {
+  .holiday-table {
     /* display: table; */
     width: 80%;
   }
@@ -242,7 +246,7 @@
   .holiday-section h2 {
     font-size: 2.5rem;
   }
-   .holiday-table {
+  .holiday-table {
     /* display: table; */
     width: 70%;
   }

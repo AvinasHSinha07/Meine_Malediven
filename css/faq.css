@@ -64,7 +64,11 @@
 
 .faqformular_link {
   text-decoration: none;
-  color: #0f386e;
+  color: #277AFF;
+}
+.faqformular_link:hover {
+  text-decoration: none;
+  color: orange;
 }
 
 .icon {
@@ -164,7 +168,7 @@
 
 .faq-answer {
   max-height: 0;
-  overflow: hidden;
+  overflow: scroll; 
   transition: max-height 0.3s ease, padding 0.3s ease;
   padding: 0 2rem;
 }

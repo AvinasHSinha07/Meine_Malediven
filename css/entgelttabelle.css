@@ -1,0 +1,421 @@
+/* --- Global & Utilities --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans) !important;
+}
+
+/* --- Breadcrumbs (Kept exactly as reference) --- */
+.breadcrumbs {
+  padding: 1rem 1rem;
+}
+
+.breadcrumbs_hotel_name {
+  color: orange;
+}
+
+.breadcrumbs_text {
+  font-size: 1.5rem;
+  color: #0f386c;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.breadcrumb_link {
+  color: #0f386c;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.breadcrumb_link:hover {
+  color: orange;
+  cursor: pointer;
+}
+
+.breadcrumb_separator {
+  color: #999;
+}
+
+.breadcrumb_current {
+  color: orange;
+  font-weight: 600;
+}
+
+/* =========================================
+   ENTGELT PAGE STYLES
+   ========================================= */
+
+/* --- Header Section (Matches kontakt_intro_container) --- */
+.entgelt-header-section {
+  padding: 2.5rem 1rem;
+}
+
+.entgelt-header-title {
+  color: #0f386e;
+  font-weight: 300 !important;
+  margin-bottom: 2rem;
+  font-size: 2rem; /* Reference Mobile Base */
+}
+
+.entgelt-header-desc {
+  color: #333333;
+  font-weight: 300;
+  margin-bottom: 1rem;
+  font-size: 1rem; /* Reference Mobile Base */
+  width: 90%;
+}
+
+/* --- Table Section (Matches holiday-section) --- */
+.entgelt-table-section {
+  padding: 2.5rem 1rem;
+}
+
+.entgelt-table-section h2 {
+  color: #0f386e;
+  font-weight: 300 !important;
+  margin-bottom: 2rem;
+  font-size: 2rem; /* Reference Mobile Base */
+}
+
+.entgelt-price-table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #dddddd;
+}
+
+.entgelt-table-header,
+.entgelt-table-row {
+  display: table-row;
+}
+
+.entgelt-table-header div {
+  font-weight: bold;
+  color: #0f386e;
+  font-size: 1rem; /* Reference Mobile Base */
+}
+
+.entgelt-table-row div {
+  color: #333333;
+  font-weight: 400;
+  font-size: 0.9rem; /* Reference Mobile Base */
+}
+
+.entgelt-table-row div,
+.entgelt-table-header div {
+  display: table-cell;
+  padding: 1.2rem 1rem;
+  text-align: left;
+}
+
+.entgelt-table-row:nth-child(even) {
+  background-color: #ebeff7;
+}
+.entgelt-table-row:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+/* --- Details Cards Section (Matches holiday-section styling logic) --- */
+.entgelt-details-section {
+  padding: 2.5rem 1rem;
+}
+
+.entgelt-details-section h2 {
+  color: #0f386e;
+  font-weight: 300 !important;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.entgelt-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.entgelt-detail-card {
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.entgelt-detail-card h3 {
+  background-color: #ebeff7; /* Matches table even rows */
+  color: #0f386e;            /* Matches table headers */
+  margin: 0;
+  padding: 1.2rem 1rem;
+  font-size: 1.1rem;         /* Slightly larger than table header for hierarchy */
+  font-weight: bold;
+  border-bottom: 1px solid #dddddd;
+}
+
+.entgelt-detail-text {
+  padding: 1.5rem 1rem;
+  color: #333333;
+  font-size: 0.95rem;        /* Matches roughly with table row content */
+  line-height: 1.6;
+}
+
+.entgelt-detail-text p {
+  margin: 0;
+}
+
+.entgelt-detail-text strong {
+  color: #d32f2f; /* Highlight color */
+  font-weight: 700;
+}
+
+
+/* =========================================
+   RESPONSIVENESS (Mapped to Reference)
+   ========================================= */
+
+/* Extra Small Devices (<=480px) */
+@media (max-width: 480px) {
+}
+
+/* Small Devices (481px - 640px) */
+@media (min-width: 481px) and (max-width: 640px) {
+}
+
+/* Medium Devices (641px - 768px) */
+@media (min-width: 641px) and (max-width: 769px) {
+  .breadcrumbs {
+    padding: 1rem 2rem;
+  }
+
+  /* Header Section Scaling */
+  .entgelt-header-section {
+    padding: 2.5rem 2rem;
+  }
+  .entgelt-header-title {
+    font-size: 2.5rem; /* Scales up */
+  }
+  .entgelt-header-desc {
+    font-size: 1.5rem; /* Scales up */
+  }
+
+  /* Content Sections */
+  .entgelt-table-section,
+  .entgelt-details-section {
+    padding: 2.5rem 2rem;
+  }
+  
+  .entgelt-table-section h2,
+  .entgelt-details-section h2 {
+     font-size: 2.5rem;
+  }
+}
+
+/* Large Tablets / Small Laptops (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1025px) {
+  .breadcrumbs {
+    padding: 1rem 2rem;
+  }
+
+  .entgelt-header-section {
+    padding: 2.5rem 2rem;
+  }
+  .entgelt-header-title {
+    font-size: 2.5rem;
+  }
+  .entgelt-header-desc {
+    font-size: 1.5rem;
+  }
+
+  .entgelt-table-section,
+  .entgelt-details-section {
+    padding: 2.5rem 2rem;
+  }
+  
+  .entgelt-table-section h2,
+  .entgelt-details-section h2 {
+     font-size: 2.5rem;
+  }
+}
+
+/* Desktops (1025px - 1280px) */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .breadcrumbs {
+    padding: 1rem 2rem;
+  }
+
+  .entgelt-header-section {
+    padding: 2.5rem 2rem;
+  }
+  .entgelt-header-title {
+    font-size: 2.5rem;
+  }
+  .entgelt-header-desc {
+    font-size: 1.5rem;
+  }
+
+  .entgelt-table-section,
+  .entgelt-details-section {
+    padding: 2.5rem 2rem;
+  }
+  
+  .entgelt-table-section h2,
+  .entgelt-details-section h2 {
+     font-size: 2.5rem;
+  }
+}
+
+/* Large Desktops (1281px - 1535px) */
+@media (min-width: 1281px) and (max-width: 1535px) {
+  .breadcrumbs {
+    padding: 1rem 3rem;
+  }
+
+  .entgelt-header-section {
+    padding: 2.5rem 3rem;
+  }
+  .entgelt-header-title {
+    font-size: 2.5rem;
+  }
+  .entgelt-header-desc {
+    font-size: 1.5rem;
+  }
+
+  .entgelt-table-section,
+  .entgelt-details-section {
+    padding: 2.5rem 3rem;
+  }
+
+  /* Reference width constraint */
+  .entgelt-price-table,
+  .entgelt-details-list {
+    width: 80%;
+  }
+
+  /* Table Specifics */
+  .entgelt-table-header div {
+    font-size: 2rem;
+  }
+  .entgelt-table-row div {
+    font-size: 1.5rem;
+  }
+  
+  /* Details Card Specifics (Match Table scaling) */
+  .entgelt-detail-card h3 {
+    font-size: 2rem;
+  }
+  .entgelt-detail-text {
+    font-size: 1.5rem;
+  }
+
+  .entgelt-price-table,
+  .entgelt-details-list {
+    width: 100%;
+  }
+}
+
+/* Extra Large Desktops (>=1536px) */
+@media (min-width: 1536px) and (max-width: 2200px) {
+  .breadcrumbs {
+    padding: 1rem 3rem;
+  }
+
+  .entgelt-header-section {
+    padding: 2.5rem 3rem;
+  }
+  .entgelt-header-title {
+    font-size: 2.5rem;
+  }
+  .entgelt-header-desc {
+    font-size: 1.5rem;
+  }
+
+  .entgelt-table-section,
+  .entgelt-details-section {
+    padding: 2.5rem 3rem;
+  }
+  
+  .entgelt-table-section h2,
+  .entgelt-details-section h2 {
+    font-size: 2.5rem;
+  }
+
+/* Table Specifics */
+  .entgelt-table-header div {
+    font-size: 2rem;
+  }
+  .entgelt-table-row div {
+    font-size: 1.5rem;
+  }
+  
+  /* Details Card Specifics (Match Table scaling) */
+  .entgelt-detail-card h3 {
+    font-size: 2rem;
+  }
+  .entgelt-detail-text {
+    font-size: 1.5rem;
+  }
+
+  .entgelt-price-table,
+  .entgelt-details-list {
+    width: 100%;
+  }
+}
+
+/* Giant Screens (>=2200px) */
+@media (min-width: 2200px) {
+  .breadcrumbs {
+    max-width: 2080px;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+  }
+
+  /* Intro Section */
+  .entgelt-header-section {
+    padding: 2.5rem 2rem;
+    max-width: 2080px;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+  }
+  .entgelt-header-title {
+    font-size: 3rem;
+  }
+  .entgelt-header-desc {
+    font-size: 2rem;
+  }
+
+  /* Content Sections */
+  .entgelt-table-section,
+  .entgelt-details-section {
+    max-width: 2080px;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+    padding-bottom: 4rem;
+  }
+
+  .entgelt-table-section h2,
+  .entgelt-details-section h2 {
+    font-size: 3rem;
+  }
+
+  /* Table Specifics */
+  .entgelt-table-header div {
+    font-size: 2rem;
+  }
+  .entgelt-table-row div {
+    font-size: 1.5rem;
+  }
+  
+  /* Details Card Specifics (Match Table scaling) */
+  .entgelt-detail-card h3 {
+    font-size: 2rem;
+  }
+  .entgelt-detail-text {
+    font-size: 1.5rem;
+  }
+
+  .entgelt-price-table,
+  .entgelt-details-list {
+    width: 100%;
+  }
+}
