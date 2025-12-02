@@ -388,33 +388,3 @@
   }
 }
 
-/* 
-@media (min-width: 2800px) and (max-width: 5200px) {
-  .resorts{
-    padding: 2.5rem 25rem;
-  }
-  .resorts_hashtag{
-    font-size: 1.5rem;
-  }
-  .resorts_title{
-    font-size: 4rem;
-  }
-  .resort_description{
-    font-size: 2rem;
-  }
-
-  .image-overlay{
-    font-size: 2rem;
-  }
-
-  .resort-title{
-    font-size: 2rem;
-  }
-  .resort-location{
-    font-size: 1.3rem;
-  }
-  .book-btn{
-    font-size: 1.5rem !important;
-    padding: 1rem 3rem !important;
-  }
-} */

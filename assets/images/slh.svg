@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43 43">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #b1b1b1;
+        font-family: MyriadPro-Regular, 'Myriad Pro';
+        font-size: 17.83px;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        stroke: #ccc;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <rect class="cls-2" x="2.46" y="2.52" width="38.09" height="37.96" rx="8" ry="8"/>
+  <text class="cls-1" transform="translate(6.41 27.52)"><tspan x="0" y="0">SLH</tspan></text>
+</svg>
