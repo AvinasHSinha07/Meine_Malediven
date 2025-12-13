@@ -268,7 +268,7 @@ body {
 .intro_section {
   position: relative;
   width: 100%;
-  height: 50vh;
+  height: 80vh;
   overflow: hidden;
   padding-top: 2.5rem;
 }
@@ -2073,13 +2073,14 @@ h4 {
     padding: 2.5rem 3rem;
   }
 
-  .hotel_name_container {
+  .hotel_name_container, .intro_text_container, .two-column-section, .hotel-info-section, .info-section, .faq-section {
     padding: 2.5rem 3rem;
   }
 
   .intro_section {
     height: 60vh;
   }
+
 }
 
 /* Extra Large Desktops (>=1536px) */
@@ -2094,6 +2095,13 @@ h4 {
 
   .right-column > div {
     padding: 2rem;
+  }
+  .intro_text_container {
+    padding: 2.5rem 3rem;
+  }
+
+  .two-column-section, .hotel-info-section, .info-section,.faq-section{
+     padding: 2.5rem 3rem;
   }
 }
 

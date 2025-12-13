@@ -13,6 +13,11 @@
   color: orange;
 }
 
+.faq-links{
+  text-decoration: none;
+  color: inherit;
+}
+
 .breadcrumbs_text {
   font-size: 1.5rem;
   color: #0f386c;
@@ -36,6 +41,8 @@
 .breadcrumb_separator {
   color: #999;
 }
+
+
 
 .breadcrumb_current {
   color: orange;
@@ -454,3 +461,6 @@
     font-weight: 700;
 }
  
+
+
+

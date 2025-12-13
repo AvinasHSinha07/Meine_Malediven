@@ -45,9 +45,13 @@
 }
 
 .resort_link {
-  color: #0c6ec8;
+  color: #277AFF;
   font-weight: 300;
   text-decoration: none;
+}
+.resort_link:hover {
+  color: orange;
+
 }
 
 .resort_description2 {

@@ -120,7 +120,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
-  /* padding: 2rem 0rem; */
+  
   background: #f7f7f7;
   border-radius: 10px;
 }
@@ -173,7 +173,7 @@
 }
 
 .quote_right img {
-  /* max-width: 400px; */
+  
   width: 100%;
   height: auto;
 
@@ -274,7 +274,7 @@
 
 
 
-/* ------------------ RESPONSIVENESS ------------------ */
+
 
 /* Extra Small Devices (<=480px) */
 @media (max-width: 480px) {

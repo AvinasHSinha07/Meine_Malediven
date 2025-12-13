@@ -7,8 +7,7 @@
 
     <link
       rel="stylesheet"
-      href="hotel-datepicker-main/dist/css/hotel-datepicker.css"
-    />
+      href="hotel-datepicker-main/dist/css/hotel-datepicker.css" />
 
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/footer.css" />
@@ -20,7 +19,7 @@
       <div class="top-header">
         <button class="btn">
           Beratungstermin buchen
-          <img src="assets/images/right-chevron.png" alt="" class="btn-icon" />
+          <img src="assets/images/right-chevron.png" alt class="btn-icon" />
         </button>
       </div>
 
@@ -30,8 +29,7 @@
             <img
               src="./assets/images/logo_meine_malediven.svg"
               alt="Logo"
-              class="logo"
-            />
+              class="logo" />
           </div>
 
           <div class="nav-items-container">
@@ -52,8 +50,7 @@
                     <img
                       class="search-icon"
                       src="assets/images/glas_blue_001f41.png"
-                      alt="Suche"
-                    />
+                      alt="Suche" />
                   </button>
                 </div>
               </div>
@@ -71,8 +68,7 @@
                   <input
                     type="text"
                     class="hotel-autocomplete-input"
-                    placeholder="Sagen Sie uns welches Hotel Sie suchen..."
-                  />
+                    placeholder="Sagen Sie uns welches Hotel Sie suchen..." />
                   <ul class="hotel-autocomplete-list"></ul>
                 </div>
               </div>
@@ -95,8 +91,7 @@
               <img
                 src="assets/images/calendar-icon.png"
                 alt="Calendar"
-                class="calendar-icon"
-              />
+                class="calendar-icon" />
             </button>
           </div>
 
@@ -109,8 +104,7 @@
               step="1"
               min="1"
               value="1"
-              class="nights-input"
-            />
+              class="nights-input" />
           </div>
 
           <div class="dropdown-container2">
@@ -203,87 +197,89 @@
 
           <p class="faq_description">
             WIn diesem Abschnitt beantworten wir die häufigsten Fragen zu
-            <a class="faqformular_link" href="">Meine Malediven</a> . Wir
+            <a class="faqformular_link" href>Meine Malediven</a> . Wir
             aktualisieren diesen Bereich regelmäßig, basierend auf den
             häufigsten Anfragen unserer Nutzer. Sollte Ihre Frage hier nicht
             beantwortet werden,
-            <a class="faqformular_link" href=""
-              >kontaktieren Sie uns bitte direkt</a
-            >.
+            <a class="faqformular_link" href>kontaktieren Sie uns bitte
+              direkt</a>.
           </p>
         </div>
       </section>
 
       <div class="section-container">
         <div class="tab">
-          <button
-            class="tablinks active"
-            onclick="openTab(event, 'Meine')"
-            id="defaultOpen"
-          >
-            <img
-              class="icon"
-              src="./assets/images/play-solid-full(1).svg"
-              alt=""
-            />
-            Meine Malediven
-          </button>
-          <button class="tablinks" onclick="openTab(event, 'Hotels')">
-            <img
-              class="icon"
-              src="./assets/images/play-solid-full(1).svg"
-              alt=""
-            />
-            Hotels
-          </button>
-          <button class="tablinks" onclick="openTab(event, 'Hoteltransfers')">
-            <img
-              class="icon"
-              src="./assets/images/play-solid-full(1).svg"
-              alt=""
-            />
-            Hoteltransfers
-          </button>
-          <button class="tablinks" onclick="openTab(event, 'Zimmer')">
-            <img
-              class="icon"
-              src="./assets/images/play-solid-full(1).svg"
-              alt=""
-            />
-            Zimmer
-          </button>
-          <button class="tablinks" onclick="openTab(event, 'Buchungen')">
-            <img
-              class="icon"
-              src="./assets/images/play-solid-full(1).svg"
-              alt=""
-            />
-            Buchungen
-          </button>
-          <button class="tablinks" onclick="openTab(event, 'Flüge')">
-            <img
-              class="icon"
-              src="./assets/images/play-solid-full(1).svg"
-              alt=""
-            />
-            Flüge
-          </button>
-          <button class="tablinks" onclick="openTab(event, 'Zahlungen')">
-            <img
-              class="icon"
-              src="./assets/images/play-solid-full(1).svg"
-              alt=""
-            />
-            Zahlungen
-          </button>
-          <button class="tablinks" onclick="openTab(event, 'Stornierungen')">
-            <img
-              class="icon"
-              src="./assets/images/play-solid-full(1).svg"
-              alt=""
-            />
-            Stornierungen
-          </button>
+          <a class="faq-links" href="faq.html">
+            <button type="button" class="tablinks active"
+              onclick="openTab(event, 'Meine')">
+              <img class="icon" src="./assets/images/play-solid-full(1).svg"
+                alt />
+              Meine Malediven
+            </button>
+          </a>
+
+          <a class="faq-links" href="hotels.html">
+            <button type="button" class="tablinks"
+              onclick="openTab(event, 'Hotels')">
+              <img class="icon" src="./assets/images/play-solid-full(1).svg"
+                alt />
+              Hotels
+            </button>
+          </a>
+
+          <a class="faq-links" href="hoteltransfers.html">
+            <button type="button" class="tablinks"
+              onclick="openTab(event, 'Hoteltransfers')">
+              <img class="icon" src="./assets/images/play-solid-full(1).svg"
+                alt />
+              Hoteltransfers
+            </button>
+          </a>
+
+          <a class="faq-links" href="zimmer.html">
+            <button type="button" class="tablinks"
+              onclick="openTab(event, 'Zimmer')">
+              <img class="icon" src="./assets/images/play-solid-full(1).svg"
+                alt />
+              Zimmer
+            </button>
+          </a>
+
+          <a class="faq-links" href="buchungen.html">
+            <button type="button" class="tablinks"
+              onclick="openTab(event, 'Buchungen')">
+              <img class="icon" src="./assets/images/play-solid-full(1).svg"
+                alt />
+              Buchungen
+            </button>
+          </a>
+
+          <a class="faq-links" href="fluege.html">
+            <button type="button" class="tablinks"
+              onclick="openTab(event, 'Flüge')">
+              <img class="icon" src="./assets/images/play-solid-full(1).svg"
+                alt />
+              Flüge
+            </button>
+          </a>
+
+          <a class="faq-links" href="zahlungen.html">
+            <button type="button" class="tablinks"
+              onclick="openTab(event, 'Zahlungen')">
+              <img class="icon" src="./assets/images/play-solid-full(1).svg"
+                alt />
+              Zahlungen
+            </button>
+          </a>
+
+          <a class="faq-links" href="stornierungen.html">
+            <button type="button" class="tablinks"
+              onclick="openTab(event, 'Stornierungen')">
+              <img class="icon" src="./assets/images/play-solid-full(1).svg"
+                alt />
+              Stornierungen
+            </button>
+          </a>
         </div>
 
         <div id="Meine" class="tabcontent active">
@@ -293,12 +289,23 @@
               <img
                 src="assets/images/plus.png"
                 class="faq-icon"
-                alt="Toggle Icon"
-              />
+                alt="Toggle Icon" />
             </button>
             <div class="faq-answer">
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum error reiciendis similique aliquid, sapiente consequatur temporibus doloremque at voluptatem pariatur, commodi eos consequuntur consectetur vel, repellendus officiis deserunt ipsum voluptas distinctio neque perspiciatis vitae? Dolore at, beatae id, laborum vel consequatur quaerat voluptatibus delectus alias enim incidunt reprehenderit eius numquam, ab voluptas sunt. Illo veritatis voluptatem minima omnis mollitia sit labore delectus ut accusantium maiores error dicta magni explicabo dolorem, facere earum, repellendus, rerum illum fugit nihil officia autem reprehenderit vitae? Nobis, autem? Modi magni placeat deserunt aut veritatis! Ratione dolor blanditiis deserunt maxime at dolore alias aliquam, voluptates iusto.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
+                error reiciendis similique aliquid, sapiente consequatur
+                temporibus doloremque at voluptatem pariatur, commodi eos
+                consequuntur consectetur vel, repellendus officiis deserunt
+                ipsum voluptas distinctio neque perspiciatis vitae? Dolore at,
+                beatae id, laborum vel consequatur quaerat voluptatibus delectus
+                alias enim incidunt reprehenderit eius numquam, ab voluptas
+                sunt. Illo veritatis voluptatem minima omnis mollitia sit labore
+                delectus ut accusantium maiores error dicta magni explicabo
+                dolorem, facere earum, repellendus, rerum illum fugit nihil
+                officia autem reprehenderit vitae? Nobis, autem? Modi magni
+                placeat deserunt aut veritatis! Ratione dolor blanditiis
+                deserunt maxime at dolore alias aliquam, voluptates iusto.
               </p>
             </div>
           </div>
@@ -309,8 +316,7 @@
               <img
                 src="assets/images/plus.png"
                 class="faq-icon"
-                alt="Toggle Icon"
-              />
+                alt="Toggle Icon" />
             </button>
             <div class="faq-answer">
               <p>
@@ -327,8 +333,7 @@
               <img
                 src="assets/images/plus.png"
                 class="faq-icon"
-                alt="Toggle Icon"
-              />
+                alt="Toggle Icon" />
             </button>
             <div class="faq-answer">
               <p>
@@ -345,8 +350,7 @@
               <img
                 src="assets/images/plus.png"
                 class="faq-icon"
-                alt="Toggle Icon"
-              />
+                alt="Toggle Icon" />
             </button>
             <div class="faq-answer">
               <p>
@@ -365,8 +369,7 @@
               <img
                 src="assets/images/plus.png"
                 class="faq-icon"
-                alt="Toggle Icon"
-              />
+                alt="Toggle Icon" />
             </button>
             <div class="faq-answer">
               <p>
@@ -387,8 +390,7 @@
               <img
                 src="assets/images/plus.png"
                 class="faq-icon"
-                alt="Toggle Icon"
-              />
+                alt="Toggle Icon" />
             </button>
             <div class="faq-answer">
               <p>
@@ -405,8 +407,7 @@
               <img
                 src="assets/images/plus.png"
                 class="faq-icon"
-                alt="Toggle Icon"
-              />
+                alt="Toggle Icon" />
             </button>
             <div class="faq-answer">
               <p>
@@ -423,8 +424,7 @@
               <img
                 src="assets/images/plus.png"
                 class="faq-icon"
-                alt="Toggle Icon"
-              />
+                alt="Toggle Icon" />
             </button>
             <div class="faq-answer">
               <p>
@@ -443,8 +443,7 @@
               <img
                 src="assets/images/plus.png"
                 class="faq-icon"
-                alt="Toggle Icon"
-              />
+                alt="Toggle Icon" />
             </button>
             <div class="faq-answer">
               <p>
@@ -465,8 +464,7 @@
               <img
                 src="assets/images/plus.png"
                 class="faq-icon"
-                alt="Toggle Icon"
-              />
+                alt="Toggle Icon" />
             </button>
             <div class="faq-answer">
               <p>
@@ -483,8 +481,7 @@
               <img
                 src="assets/images/plus.png"
                 class="faq-icon"
-                alt="Toggle Icon"
-              />
+                alt="Toggle Icon" />
             </button>
             <div class="faq-answer">
               <p>
@@ -501,8 +498,7 @@
               <img
                 src="assets/images/plus.png"
                 class="faq-icon"
-                alt="Toggle Icon"
-              />
+                alt="Toggle Icon" />
             </button>
             <div class="faq-answer">
               <p>
@@ -521,8 +517,7 @@
               <img
                 src="assets/images/plus.png"
                 class="faq-icon"
-                alt="Toggle Icon"
-              />
+                alt="Toggle Icon" />
             </button>
             <div class="faq-answer">
               <p>
@@ -543,8 +538,7 @@
               <img
                 src="assets/images/plus.png"
                 class="faq-icon"
-                alt="Toggle Icon"
-              />
+                alt="Toggle Icon" />
             </button>
             <div class="faq-answer">
               <p>
@@ -561,8 +555,7 @@
               <img
                 src="assets/images/plus.png"
                 class="faq-icon"
-                alt="Toggle Icon"
-              />
+                alt="Toggle Icon" />
             </button>
             <div class="faq-answer">
               <p>
@@ -579,8 +572,7 @@
               <img
                 src="assets/images/plus.png"
                 class="faq-icon"
-                alt="Toggle Icon"
-              />
+                alt="Toggle Icon" />
             </button>
             <div class="faq-answer">
               <p>
@@ -599,8 +591,7 @@
               <img
                 src="assets/images/plus.png"
                 class="faq-icon"
-                alt="Toggle Icon"
-              />
+                alt="Toggle Icon" />
             </button>
             <div class="faq-answer">
               <p>
@@ -621,8 +612,7 @@
               <img
                 src="assets/images/plus.png"
                 class="faq-icon"
-                alt="Toggle Icon"
-              />
+                alt="Toggle Icon" />
             </button>
             <div class="faq-answer">
               <p>
@@ -639,8 +629,7 @@
               <img
                 src="assets/images/plus.png"
                 class="faq-icon"
-                alt="Toggle Icon"
-              />
+                alt="Toggle Icon" />
             </button>
             <div class="faq-answer">
               <p>
@@ -657,8 +646,7 @@
               <img
                 src="assets/images/plus.png"
                 class="faq-icon"
-                alt="Toggle Icon"
-              />
+                alt="Toggle Icon" />
             </button>
             <div class="faq-answer">
               <p>
@@ -677,8 +665,7 @@
               <img
                 src="assets/images/plus.png"
                 class="faq-icon"
-                alt="Toggle Icon"
-              />
+                alt="Toggle Icon" />
             </button>
             <div class="faq-answer">
               <p>
@@ -699,8 +686,7 @@
               <img
                 src="assets/images/plus.png"
                 class="faq-icon"
-                alt="Toggle Icon"
-              />
+                alt="Toggle Icon" />
             </button>
             <div class="faq-answer">
               <p>
@@ -717,8 +703,7 @@
               <img
                 src="assets/images/plus.png"
                 class="faq-icon"
-                alt="Toggle Icon"
-              />
+                alt="Toggle Icon" />
             </button>
             <div class="faq-answer">
               <p>
@@ -735,8 +720,7 @@
               <img
                 src="assets/images/plus.png"
                 class="faq-icon"
-                alt="Toggle Icon"
-              />
+                alt="Toggle Icon" />
             </button>
             <div class="faq-answer">
               <p>
@@ -755,8 +739,7 @@
               <img
                 src="assets/images/plus.png"
                 class="faq-icon"
-                alt="Toggle Icon"
-              />
+                alt="Toggle Icon" />
             </button>
             <div class="faq-answer">
               <p>
@@ -777,8 +760,7 @@
               <img
                 src="assets/images/plus.png"
                 class="faq-icon"
-                alt="Toggle Icon"
-              />
+                alt="Toggle Icon" />
             </button>
             <div class="faq-answer">
               <p>
@@ -795,8 +777,7 @@
               <img
                 src="assets/images/plus.png"
                 class="faq-icon"
-                alt="Toggle Icon"
-              />
+                alt="Toggle Icon" />
             </button>
             <div class="faq-answer">
               <p>
@@ -813,8 +794,7 @@
               <img
                 src="assets/images/plus.png"
                 class="faq-icon"
-                alt="Toggle Icon"
-              />
+                alt="Toggle Icon" />
             </button>
             <div class="faq-answer">
               <p>
@@ -833,8 +813,7 @@
               <img
                 src="assets/images/plus.png"
                 class="faq-icon"
-                alt="Toggle Icon"
-              />
+                alt="Toggle Icon" />
             </button>
             <div class="faq-answer">
               <p>
@@ -855,8 +834,7 @@
               <img
                 src="assets/images/plus.png"
                 class="faq-icon"
-                alt="Toggle Icon"
-              />
+                alt="Toggle Icon" />
             </button>
             <div class="faq-answer">
               <p>
@@ -873,8 +851,7 @@
               <img
                 src="assets/images/plus.png"
                 class="faq-icon"
-                alt="Toggle Icon"
-              />
+                alt="Toggle Icon" />
             </button>
             <div class="faq-answer">
               <p>
@@ -891,8 +868,7 @@
               <img
                 src="assets/images/plus.png"
                 class="faq-icon"
-                alt="Toggle Icon"
-              />
+                alt="Toggle Icon" />
             </button>
             <div class="faq-answer">
               <p>
@@ -914,8 +890,7 @@
             <img
               src="assets/images/mm-logo-white.png"
               alt="Logo"
-              class="footer-logo"
-            />
+              class="footer-logo" />
             <p class="footer-text">
               Meine Malediven ist eine Marke der BlueFields GmbH © 2004 - 2026
             </p>
@@ -923,12 +898,10 @@
               <img src="assets/images/visa.svg" alt="Zahlung mit Visa" />
               <img
                 src="assets/images/mastercard-cc.svg"
-                alt="Zahlung mit Mastercard"
-              />
+                alt="Zahlung mit Mastercard" />
               <img
                 src="assets/images/rechnung_logo.svg"
-                alt="Zahlung auf Rechnung"
-              />
+                alt="Zahlung auf Rechnung" />
             </div>
           </div>
 
@@ -967,7 +940,8 @@
 
     <script type="module" src="fecha-4.2.1/lib/fecha.js"></script>
     <script src="fecha-4.2.1/dist/fecha.min.js"></script>
-    <script src="hotel-datepicker-main/dist/js/hotel-datepicker.min.js"></script>
+    <script
+      src="hotel-datepicker-main/dist/js/hotel-datepicker.min.js"></script>
     <script src="js/faq.js"></script>
     <script src="js/script.js"></script>
   </body>

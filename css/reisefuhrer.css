@@ -71,10 +71,19 @@
 .resort_description {
   color: var(--color-text);
   font-weight: 300;
-  margin-bottom: 4rem;
+  /* margin-bottom: 4rem; */
   font-size: 1.5rem;
   width: 90%;
   line-height: 1.5;
+}
+
+.reisefuhrer_link {
+  text-decoration: none;
+  color: #277aff;
+}
+.reisefuhrer_link:hover {
+  text-decoration: none;
+  color: orange;
 }
 
 
@@ -196,16 +205,17 @@
 
 .media-tag {
   position: absolute;
-  left: 12px;
-  top: 10px;
-  background: rgba(255, 255, 255, 0.9);
-  color: #333;
-  font-size: 0.75rem;
-  padding: 0.4rem 0.8rem;
-  border-radius: 3px;
+  left: 0px;
+  top: 0px;
+  background: #dddddd;
+  color: #333333;
+  font-size: 1rem;
+     padding: 0.5rem 2rem;
+  /* border-radius: 3px; */
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  
   font-weight: 600;
 }
 
@@ -251,8 +261,8 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 0.3rem;
+  gap: 1rem;
+
 }
 
 .hotel-name {
@@ -341,8 +351,8 @@
 .hotel-card-footer {
   display: flex;
   flex-direction: column;
-  padding: 1rem 1.75rem 1.5rem;
-  gap: 1rem;
+      padding: 1rem;
+  gap: 2rem;
 }
 
 .hotel-price-wrapper {
@@ -371,10 +381,10 @@
 
 .hr-line {
   border: 0;
-  height: 1px;
+  height: 3px;
   background-color: #e0e0e0;
   margin: 0;
-  width: 100%;
+  width: 90%;
 }
 
 .footer-actions {
@@ -422,7 +432,7 @@
     color: #333;
     font-size: 1rem;
     line-height: 1.6;
-    margin-bottom: 0.5rem;
+    /* margin-bottom: 0.5rem; */
     font-weight: 300;
     width: 100%;
     font-family: var(--font-sans);
@@ -434,7 +444,7 @@
   }
   .hotel-filters {
     width: 100%;
-    flex: 1 1 auto;
+    flex: 1 1  auto;
   }
 
   .hotel-card-media {
@@ -544,7 +554,7 @@
   .hotel-filters {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 1rem;
   }
   .filters-heading {
@@ -553,6 +563,10 @@
 
   .hotel-card-media {
     height: 300px;
+  }
+
+  .hotel-card-footer{
+        padding: 1.5rem 1.75rem 1rem;
   }
 }
 
@@ -577,7 +591,7 @@
   .hotel-filters {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr ;
     gap: 1.5rem;
   }
   .filters-heading {
@@ -586,6 +600,10 @@
 
   .hotel-card-media {
     height: 350px;
+  }
+
+    .hotel-card-footer{
+        padding: 1.5rem 1.75rem 1rem;
   }
 }
 
@@ -610,6 +628,10 @@
   .hotel-card-media {
     height: 340px;
   }
+
+      .hotel-card-footer{
+        padding: 1.5rem 1.75rem 1rem;
+  }
 }
 
 @media (min-width: 1281px) and (max-width: 1535px) {
@@ -622,6 +644,14 @@
 
   .hotel-card-media {
     height: 380px;
+  }
+
+    .hotel-filters {
+    width: 300px;
+    flex: 0 0 300px;
+  }
+      .hotel-card-footer{
+        padding: 1.5rem 1.75rem 1rem;
   }
 }
 
@@ -638,6 +668,17 @@
 
   .hotel-card-media {
     height: 420px;
+  }
+
+  .hotel-filters {
+    width: 400px;
+    flex: 0 0 400px;
+  }
+   .filter-list {
+    gap: 1rem;
+  }
+      .hotel-card-footer{
+        padding: 1.5rem 1.75rem 1rem;
   }
 }
 
@@ -663,8 +704,8 @@
   }
 
   .hotel-filters {
-    width: 350px;
-    flex: 0 0 350px;
+    width: 400px;
+    flex: 0 0 400px;
   }
   .hotel-card-media {
     height: 500px;
@@ -739,5 +780,11 @@
 
   .btn {
     font-size: 1.5rem;
+  }
+
+  
+  .hotel-card-footer{
+        padding: 1.5rem 1.75rem 1rem;
+        gap: 2rem;
   }
 }

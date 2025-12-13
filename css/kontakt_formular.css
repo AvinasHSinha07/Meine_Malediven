@@ -69,6 +69,10 @@
   text-decoration: none;
   color: #0f386e;
 }
+.kontaktformular_link:hover {
+  text-decoration: none;
+  color: orange;
+}
 
 
 .kontakt_form {

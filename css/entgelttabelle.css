@@ -1,4 +1,4 @@
-/* --- Global & Utilities --- */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,7 +6,7 @@
   font-family: var(--font-sans) !important;
 }
 
-/* --- Breadcrumbs (Kept exactly as reference) --- */
+
 .breadcrumbs {
   padding: 1rem 1rem;
 }
@@ -44,11 +44,10 @@
   font-weight: 600;
 }
 
-/* =========================================
-   ENTGELT PAGE STYLES
-   ========================================= */
 
-/* --- Header Section (Matches kontakt_intro_container) --- */
+
+
+
 .entgelt-header-section {
   padding: 2.5rem 1rem;
 }
@@ -57,18 +56,18 @@
   color: #0f386e;
   font-weight: 300 !important;
   margin-bottom: 2rem;
-  font-size: 2rem; /* Reference Mobile Base */
+  font-size: 2rem; 
 }
 
 .entgelt-header-desc {
   color: #333333;
   font-weight: 300;
   margin-bottom: 1rem;
-  font-size: 1rem; /* Reference Mobile Base */
+  font-size: 1rem; 
   width: 90%;
 }
 
-/* --- Table Section (Matches holiday-section) --- */
+
 .entgelt-table-section {
   padding: 2.5rem 1rem;
 }
@@ -77,7 +76,7 @@
   color: #0f386e;
   font-weight: 300 !important;
   margin-bottom: 2rem;
-  font-size: 2rem; /* Reference Mobile Base */
+  font-size: 2rem; 
 }
 
 .entgelt-price-table {
@@ -95,13 +94,13 @@
 .entgelt-table-header div {
   font-weight: bold;
   color: #0f386e;
-  font-size: 1rem; /* Reference Mobile Base */
+  font-size: 1rem; 
 }
 
 .entgelt-table-row div {
   color: #333333;
   font-weight: 400;
-  font-size: 0.9rem; /* Reference Mobile Base */
+  font-size: 0.9rem; 
 }
 
 .entgelt-table-row div,
@@ -118,7 +117,7 @@
   background-color: #ffffff;
 }
 
-/* --- Details Cards Section (Matches holiday-section styling logic) --- */
+
 .entgelt-details-section {
   padding: 2.5rem 1rem;
 }
@@ -144,19 +143,19 @@
 }
 
 .entgelt-detail-card h3 {
-  background-color: #ebeff7; /* Matches table even rows */
-  color: #0f386e;            /* Matches table headers */
+  background-color: #ebeff7; 
+  color: #0f386e;            
   margin: 0;
   padding: 1.2rem 1rem;
-  font-size: 1.1rem;         /* Slightly larger than table header for hierarchy */
-  font-weight: bold;
+  font-size: 1.1rem;         
+  font-weight: 400;
   border-bottom: 1px solid #dddddd;
 }
 
 .entgelt-detail-text {
   padding: 1.5rem 1rem;
   color: #333333;
-  font-size: 0.95rem;        /* Matches roughly with table row content */
+  font-size: 0.95rem;        
   line-height: 1.6;
 }
 
@@ -165,41 +164,39 @@
 }
 
 .entgelt-detail-text strong {
-  color: #d32f2f; /* Highlight color */
+  color: #d32f2f; 
   font-weight: 700;
 }
 
 
-/* =========================================
-   RESPONSIVENESS (Mapped to Reference)
-   ========================================= */
 
-/* Extra Small Devices (<=480px) */
+
+
 @media (max-width: 480px) {
 }
 
-/* Small Devices (481px - 640px) */
+
 @media (min-width: 481px) and (max-width: 640px) {
 }
 
-/* Medium Devices (641px - 768px) */
+
 @media (min-width: 641px) and (max-width: 769px) {
   .breadcrumbs {
     padding: 1rem 2rem;
   }
 
-  /* Header Section Scaling */
+  
   .entgelt-header-section {
     padding: 2.5rem 2rem;
   }
   .entgelt-header-title {
-    font-size: 2.5rem; /* Scales up */
+    font-size: 2.5rem; 
   }
   .entgelt-header-desc {
-    font-size: 1.5rem; /* Scales up */
+    font-size: 1.5rem; 
   }
 
-  /* Content Sections */
+  
   .entgelt-table-section,
   .entgelt-details-section {
     padding: 2.5rem 2rem;
@@ -211,7 +208,7 @@
   }
 }
 
-/* Large Tablets / Small Laptops (769px - 1024px) */
+
 @media (min-width: 769px) and (max-width: 1025px) {
   .breadcrumbs {
     padding: 1rem 2rem;
@@ -238,7 +235,7 @@
   }
 }
 
-/* Desktops (1025px - 1280px) */
+
 @media (min-width: 1025px) and (max-width: 1280px) {
   .breadcrumbs {
     padding: 1rem 2rem;
@@ -265,7 +262,7 @@
   }
 }
 
-/* Large Desktops (1281px - 1535px) */
+
 @media (min-width: 1281px) and (max-width: 1535px) {
   .breadcrumbs {
     padding: 1rem 3rem;
@@ -286,13 +283,13 @@
     padding: 2.5rem 3rem;
   }
 
-  /* Reference width constraint */
+  
   .entgelt-price-table,
   .entgelt-details-list {
     width: 80%;
   }
 
-  /* Table Specifics */
+  
   .entgelt-table-header div {
     font-size: 2rem;
   }
@@ -300,7 +297,7 @@
     font-size: 1.5rem;
   }
   
-  /* Details Card Specifics (Match Table scaling) */
+  
   .entgelt-detail-card h3 {
     font-size: 2rem;
   }
@@ -314,7 +311,7 @@
   }
 }
 
-/* Extra Large Desktops (>=1536px) */
+
 @media (min-width: 1536px) and (max-width: 2200px) {
   .breadcrumbs {
     padding: 1rem 3rem;
@@ -340,7 +337,7 @@
     font-size: 2.5rem;
   }
 
-/* Table Specifics */
+
   .entgelt-table-header div {
     font-size: 2rem;
   }
@@ -348,7 +345,7 @@
     font-size: 1.5rem;
   }
   
-  /* Details Card Specifics (Match Table scaling) */
+  
   .entgelt-detail-card h3 {
     font-size: 2rem;
   }
@@ -362,7 +359,7 @@
   }
 }
 
-/* Giant Screens (>=2200px) */
+
 @media (min-width: 2200px) {
   .breadcrumbs {
     max-width: 2080px;
@@ -370,7 +367,7 @@
     padding: 2rem 2rem;
   }
 
-  /* Intro Section */
+  
   .entgelt-header-section {
     padding: 2.5rem 2rem;
     max-width: 2080px;
@@ -384,7 +381,7 @@
     font-size: 2rem;
   }
 
-  /* Content Sections */
+  
   .entgelt-table-section,
   .entgelt-details-section {
     max-width: 2080px;
@@ -398,7 +395,7 @@
     font-size: 3rem;
   }
 
-  /* Table Specifics */
+  
   .entgelt-table-header div {
     font-size: 2rem;
   }
@@ -406,7 +403,7 @@
     font-size: 1.5rem;
   }
   
-  /* Details Card Specifics (Match Table scaling) */
+  
   .entgelt-detail-card h3 {
     font-size: 2rem;
   }

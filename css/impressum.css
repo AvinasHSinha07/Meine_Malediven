@@ -65,6 +65,10 @@
   text-decoration: none;
   color: #0f386e;
 }
+.impressumformular_link:hover {
+  text-decoration: none;
+  color: orange;
+}
 
 /* ------------------ RESPONSIVENESS ------------------ */
 

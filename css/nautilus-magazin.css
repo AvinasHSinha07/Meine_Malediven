@@ -1,6 +1,4 @@
-/* =========================================
-   1. GLOBAL RESET & FONTS
-   ========================================= */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,9 +6,6 @@
   font-family: var(--font-sans) !important;
 }
 
-/* =========================================
-   2. BREADCRUMBS & NAUTILUS SECTION
-   ========================================= */
 .breadcrumbs {
   padding: 1rem 1rem;
 }
@@ -67,9 +62,7 @@
   width: 90%;
 }
 
-/* =========================================
-   3. nautilus SECTION
-   ========================================= */
+
 .nautilus {
   padding: 2.5rem 3rem;
 }
@@ -185,9 +178,9 @@
    4. RESPONSIVE MEDIA QUERIES
    ========================================= */
 
-/* <= 480px */
+
 @media (max-width: 480px) {
-  /* nautilus Updates */
+  
   .nautilus {
     padding: 1.5rem 1rem;
   }
@@ -203,9 +196,9 @@
   }
 }
 
-/* 481px - 640px */
+
 @media (min-width: 481px) and (max-width: 640px) {
-  /* nautilus Updates */
+  
   .nautilus {
     padding: 2rem 2rem;
   }
@@ -221,9 +214,9 @@
   }
 }
 
-/* 641px - 769px */
+
 @media (min-width: 641px) and (max-width: 769px) {
-  /* Nautilus Updates */
+  
   .breadcrumbs {
     padding: 1rem 2rem;
   }
@@ -237,7 +230,7 @@
     font-size: 1.5rem;
   }
 
-  /* nautilus Updates */
+  
   .nautilus {
     padding: 2.5rem 2rem;
   }
@@ -253,9 +246,9 @@
   }
 }
 
-/* 769px - 1025px */
+
 @media (min-width: 769px) and (max-width: 1025px) {
-  /* Nautilus Updates */
+  
   .breadcrumbs {
     padding: 1rem 2rem;
   }
@@ -269,7 +262,7 @@
     font-size: 1.5rem;
   }
 
-  /* nautilus Updates */
+  
   .nautilus {
     padding: 2.5rem 3rem;
   }
@@ -279,9 +272,9 @@
   }
 }
 
-/* 1025px - 1280px */
+
 @media (min-width: 1025px) and (max-width: 1280px) {
-  /* Nautilus Updates */
+  
   .breadcrumbs {
     padding: 1rem 2rem;
   }
@@ -295,16 +288,16 @@
     font-size: 1.5rem;
   }
 
-  /* nautilus Updates */
+  
   .nautilus-cards-container {
     grid-template-columns: 1fr 1fr;
     gap: 20px;
   }
 }
 
-/* 1281px - 1535px */
+
 @media (min-width: 1281px) and (max-width: 1535px) {
-  /* Nautilus Updates */
+  
   .breadcrumbs {
     padding: 1rem 3rem;
   }
@@ -318,7 +311,7 @@
     font-size: 1.5rem;
   }
 
-  /* nautilus Updates */
+  
   .nautilus-cards-container {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 3rem;
@@ -328,9 +321,9 @@
   }
 }
 
-/* 1536px - 2200px */
+
 @media (min-width: 1536px) and (max-width: 2200px) {
-  /* Nautilus Updates */
+  
   .breadcrumbs {
     padding: 1rem 3rem;
   }
@@ -344,7 +337,7 @@
     font-size: 1.5rem;
   }
 
-  /* nautilus Updates */
+  
   .nautilus-cards-container {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 5rem;
@@ -357,9 +350,9 @@
   }
 }
 
-/* 2200px+ */
+
 @media (min-width: 2200px) {
-  /* Nautilus Updates */
+  
   .breadcrumbs {
     max-width: 2080px;
     margin: 0 auto;
@@ -377,7 +370,7 @@
     font-size: 2rem;
   }
 
-  /* nautilus Updates */
+  
   .nautilus {
     max-width: 2080px;
     margin: 0 auto;

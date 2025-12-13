@@ -5,9 +5,9 @@
   font-family: var(--font-sans) !important;
 }
 
-/* -------------------------------------------------------------------------- */
-/* BREADCRUMBS                                                                */
-/* -------------------------------------------------------------------------- */
+
+
+
 .breadcrumbs {
   padding: 1rem 1rem;
 }
@@ -45,9 +45,9 @@
   font-weight: 600;
 }
 
-/* -------------------------------------------------------------------------- */
-/* PAGINATION                                                                 */
-/* -------------------------------------------------------------------------- */
+
+
+
 .custom-pagination {
   display: flex;
   justify-content: center;
@@ -109,9 +109,9 @@
   user-select: none;
 }
 
-/* -------------------------------------------------------------------------- */
-/* PRIVACY POLICY SECTION (Base Styles / Desktop Default)                     */
-/* -------------------------------------------------------------------------- */
+
+
+
 
 .privacy-section {
   width: 100%;
@@ -126,23 +126,23 @@
   display: flex;
 
   gap: 3rem;
-  /* Fixed height calculation to allow internal scrolling */
+  
 }
 
-/* --- Left Column: Sidebar --- */
+
 .privacy-sidebar {
-  /* Use fit-content to only take required space */
+  
   width: fit-content;
   min-width: 250px;
   flex-shrink: 0;
 
-  /* --- CHANGED/ADDED PROPERTIES --- */
-  background-color: #f1f6fe; /* Light blue background */
+  
+  background-color: #f1f6fe; 
 
-  height: fit-content; /* Stops it from stretching to full height */
-  /* ------------------------------- */
+  height: fit-content; 
+  
 
-  /* Removed overflow-y: auto because it no longer scrolls independently */
+  
 }
 .privacy-sidebar::-webkit-scrollbar {
   display: none;
@@ -152,7 +152,7 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  /* Ensure container respects width of widest link */
+  
   width: max-content;
   max-width: 100%;
   padding: 1.5rem 0rem;
@@ -165,18 +165,18 @@
 .nav-link {
   display: block;
   text-decoration: none;
-  color: #0f386c; /* Primary Blue */
+  color: #0f386c; 
   font-size: 1rem;
   padding: 0.5rem 1rem;
   border-radius: 6px;
   transition: all 0.3s ease;
   font-weight: 400;
   border-left: 3px solid transparent;
-  /* Prevent wrapping in sidebar */
+  
   white-space: nowrap;
 }
 
-/* --- Right Column: Content --- */
+
 .privacy-content {
   flex: 1;
   padding: 1rem 1rem 4rem 1rem;
@@ -185,13 +185,13 @@
   scrollbar-width: none;
   scrollbar-color: #0f386c #f1f6fe;
 
-  /* --- ADD THIS --- */
-  height: 100%; /* Fills the container */
-  /* OR set a max-height if you want it to stop growing at a certain point */
-  /* max-height: 800px; */
+  
+  height: 100%; 
+  
+  
 }
 
-/* Scrollbar styling for Webkit (Chrome, Safari) */
+
 .privacy-content::-webkit-scrollbar {
   width: 8px;
 }
@@ -203,7 +203,7 @@
   border-radius: 4px;
 }
 
-/* Typography & Content Styling */
+
 .privacy-header {
   margin-bottom: 2rem;
 }
@@ -239,7 +239,7 @@
 }
 
 .privacy-sub-title {
-  color: #1a588e; /* Button Blue for subheaders */
+  color: #1a588e; 
   font-size: 1.5rem;
   font-weight: 500;
   margin-top: 2rem;
@@ -252,7 +252,7 @@
   line-height: 1.6;
   margin-bottom: 0.5rem;
   font-weight: 300;
-  /* font-family: var(--font-sans); */
+  
 }
 
 .privacy-content a {
@@ -294,9 +294,9 @@
 }
 
 
-/* Custom List Styling for Privacy Section */
+
 .privacy-list {
-  list-style: inside disc; /* Remove default bullets */
+  list-style: inside disc; 
   padding: 0;
   margin: 1rem 0 2rem 0;
 }
@@ -305,7 +305,7 @@
   position: relative;
 
   
-  /* Match existing paragraph typography */
+  
   color: #333333;
   font-size: 1rem;
   font-weight: 300;
@@ -315,12 +315,12 @@
 
 
 
-/* -------------------------------------------------------------------------- */
-/* MEDIA QUERIES (Merged)                                                     */
-/* -------------------------------------------------------------------------- */
+
+
+
 
 @media (max-width: 480px) {
-  /* Pagination */
+  
   .custom-pagination ul {
     gap: 4px;
   }
@@ -334,7 +334,7 @@
     padding: 0 4px;
   }
 
-  /* Privacy Section: Stacked Layout */
+  
   .privacy-container {
     flex-direction: column;
     height: auto;
@@ -349,7 +349,7 @@
     overflow-y: visible;
   }
   .privacy-nav ul {
-    /* display: flex; */
+    
     flex-wrap: wrap;
     gap: 0.5rem;
     width: 100%;
@@ -380,7 +380,7 @@
 }
 
 @media (min-width: 481px) and (max-width: 640px) {
-  /* Pagination */
+  
   .custom-pagination ul {
     gap: 6px;
   }
@@ -393,7 +393,7 @@
     font-size: 0.9rem;
   }
 
-  /* Privacy Section: Stacked Layout */
+  
   .privacy-container {
     flex-direction: column;
     height: auto;
@@ -429,16 +429,16 @@
 }
 
 @media (min-width: 641px) and (max-width: 769px) {
-  /* Breadcrumbs */
+  
   .breadcrumbs {
     padding: 1rem 2rem;
   }
-  /* Pagination */
+  
   .custom-pagination ul {
     gap: 8px;
   }
 
-  /* Privacy Section: Stacked Layout */
+  
   .privacy-container {
     flex-direction: column;
     height: auto;
@@ -453,7 +453,7 @@
     overflow-y: visible;
   }
   .privacy-nav ul {
-    /* display: flex; */
+    
     flex-wrap: wrap;
     gap: 0.5rem;
     width: 100%;
@@ -474,16 +474,16 @@
 }
 
 @media (min-width: 769px) and (max-width: 1025px) {
-  /* Breadcrumbs */
+  
   .breadcrumbs {
     padding: 1rem 2rem;
   }
-  /* Pagination */
+  
   .custom-pagination ul {
     gap: 10px;
   }
 
-  /* Privacy Section: Stacked Layout (Tablet Landscape) */
+  
   .privacy-container {
     flex-direction: column;
     height: auto;
@@ -498,7 +498,7 @@
     overflow-y: visible;
   }
   .privacy-nav ul {
-    /* display: flex; */
+    
     flex-wrap: wrap;
     gap: 0.8rem;
     width: 100%;
@@ -523,32 +523,32 @@
 }
 
 @media (min-width: 1025px) and (max-width: 1280px) {
-  /* Breadcrumbs */
+  
   .breadcrumbs {
     padding: 1rem 2rem;
   }
-  /* Pagination */
+  
   .custom-pagination ul {
     gap: 10px;
   }
 
-  /* Privacy Section: Desktop Padding */
+  
   .privacy-container {
     padding: 0 2rem;
   }
 }
 
 @media (min-width: 1281px) and (max-width: 1535px) {
-  /* Breadcrumbs */
+  
   .breadcrumbs {
     padding: 1rem 3rem;
   }
-  /* Pagination */
+  
   .custom-pagination ul {
     gap: 12px;
   }
 
-  /* Privacy Section: Desktop Padding */
+  
   .privacy-container {
     padding: 0 3rem;
   }
@@ -558,11 +558,11 @@
 }
 
 @media (min-width: 1536px) and (max-width: 2200px) {
-  /* Breadcrumbs */
+  
   .breadcrumbs {
     padding: 1rem 3rem;
   }
-  /* Pagination */
+  
   .custom-pagination ul {
     gap: 14px;
   }
@@ -574,10 +574,10 @@
     font-size: 1.1rem;
   }
 
-  /* Privacy Section */
+  
   .privacy-container {
-    /* padding: 0 3rem; */
-    /* max-width: 1440px; */
+    
+    
     padding: 2.5rem 3rem;
   }
 
@@ -592,13 +592,13 @@
 }
 
 @media (min-width: 2200px) {
-  /* Breadcrumbs */
+  
   .breadcrumbs {
     max-width: 2080px;
     margin: 0 auto;
     padding: 2rem 2rem;
   }
-  /* Pagination */
+  
   .custom-pagination {
     max-width: 2080px;
     margin: 48px auto;
@@ -614,7 +614,7 @@
     font-size: 1.2rem;
   }
 
-  /* Privacy Section */
+  
   .privacy-container {
     max-width: 2080px;
     margin: 0 auto;
